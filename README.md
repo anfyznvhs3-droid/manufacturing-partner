@@ -7,6 +7,7 @@
 - [제조업파트너 공개 스토리](index.html)
 - [SEC-IR 스타일 제조업파트너 소개 페이지](company-intro.html)
 - [동료용 스킬 설명 슬라이드](skill-slides.html)
+- [5분 발표용 슬라이드](presentation-5min.html)
 - [역할별 업무 흐름도](my-workflow-skill/assets/workflow-algorithm/index.html)
 
 ## 문제와 해결 방식
