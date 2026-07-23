@@ -80,51 +80,15 @@
 <body>
   <header><div class="wrap"><div class="eyebrow">Manufacturing review algorithm</div><h1>자료가 들어오면<br>사실로 바뀌는 과정</h1><p class="lead">한 명의 운영자가 최대 20개 출처를 받아, 근거를 확인하고 모르는 것을 남긴 뒤 하나의 출력 계약으로 정리합니다.</p></div></header>
   <main class="wrap">
-    <section aria-labelledby="easy-flow-heading">
-      <h2 id="easy-flow-heading">한눈에 보는 쉬운 순서</h2>
-      <p class="plain-note">자료를 받고, 잘게 나누고, 맞춰 보고, 사람에게 물어본 뒤, 한 장의 결과로 정리합니다.</p>
-      <div class="one-line" aria-label="자료 받기부터 결과 만들기까지 한 줄 순서">
-        <div class="one-line-step"><b>1 · INPUT</b><strong>자료 받기</strong><span>문서와 기록을 모아요</span></div>
-        <div class="one-line-arrow" aria-hidden="true">→</div>
-        <div class="one-line-step"><b>2</b><strong>잘게 나누기</strong><span>문장을 작은 사실로 나눠요</span></div>
-        <div class="one-line-arrow" aria-hidden="true">→</div>
-        <div class="one-line-step"><b>3</b><strong>맞춰 보기</strong><span>자료가 같은지 비교해요</span></div>
-        <div class="one-line-arrow" aria-hidden="true">→</div>
-        <div class="one-line-step"><b>4</b><strong>사람에게 묻기</strong><span>모르는 것은 만든 사람에게 물어요</span></div>
-        <div class="one-line-arrow" aria-hidden="true">→</div>
-        <div class="one-line-step"><b>5 · 반복</b><strong>다시 확인하기</strong><span>틀린 곳을 고쳐 다시 살펴봐요</span></div>
-        <div class="one-line-arrow" aria-hidden="true">→</div>
-        <div class="one-line-step"><b>6 · OUTPUT</b><strong>한 장으로 정리</strong><span>확인 필요와 충돌을 함께 보여줘요</span></div>
-      </div>
-    </section>
-    <section class="decision-map" aria-labelledby="decision-heading">
-      <h2 id="decision-heading">예 / 아니오로 따라가는 알고리즘</h2>
-      <p>아니오가 나오면 억지로 통과하지 않고, 자료를 보충하거나 다시 확인합니다.</p>
-      <div class="flow-row">
-        <div class="flow-node start">시작<br>자료 받기</div><div class="flow-arrow">→</div><div class="flow-node question">자료가 있나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
-        <div class="flow-node question">내용이 서로 같나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
-        <div class="flow-node question">사람이 확인했나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
-        <div class="flow-node question">정확도 99% 이상?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
-        <div class="flow-node done">완료 + 담당자 알림</div>
-      </div>
-      <div class="flow-row" style="margin-top:12px"><div class="flow-node stop">아니오 → 자료 보충</div><div class="flow-arrow">↺ 다시 확인</div><div class="flow-node stop">아니오 → 충돌로 멈춤</div><div class="flow-arrow">↺ 다시 확인</div><div class="flow-node stop">아니오 → 사람에게 질문</div><div class="flow-arrow">↺ 다시 확인</div><div class="flow-node stop">아니오 → 다음 회차</div></div>
-    </section>
     <section aria-labelledby="lane-heading">
       <h2 id="lane-heading">누가 무엇을 하는지 보는 흐름도</h2>
       <p class="lane-note">세로 줄은 담당자를, 아래로 내려가는 화살표는 순서를 뜻합니다.</p>
       <div class="swimlane" aria-label="운영자, 자료 담당자, AI 검토, 최종 담당자의 업무 흐름">
         <div class="lane"><div class="lane-title">운영자</div><div class="lane-body"><div class="lane-node start">시작</div><div class="lane-arrow">↓</div><div class="lane-node">자료를 받아 이름표 붙이기</div><div class="lane-arrow">→</div></div></div>
         <div class="lane"><div class="lane-title">자료 담당자</div><div class="lane-body"><div class="lane-node">원본·조건·버전 알려주기</div><div class="lane-arrow">↓</div><div class="lane-node">모르는 질문에 답하기</div><div class="lane-arrow">→</div></div></div>
-        <div class="lane"><div class="lane-title">AI 검토</div><div class="lane-body"><div class="lane-node">문장을 작은 사실로 나누기</div><div class="lane-arrow">↓</div><div class="lane-node decision">자료가<br>맞나요?</div><div class="lane-arrow">↓ 아니오: 다시 묻기</div><div class="lane-node">사람 확인 기록하기</div></div></div>
+        <div class="lane"><div class="lane-title">AI 검토</div><div class="lane-body"><div class="lane-node">문장을 작은 사실로 나누기</div><div class="lane-arrow">↓</div><div class="lane-node decision">자료가<br>맞나요?</div><div class="lane-arrow">예 ↓</div><div class="lane-node">사람 확인 기록하기</div><div class="lane-arrow">아니오 ↺ 다시 확인</div><div class="lane-node">자료 보충·질문 만들기</div><div class="lane-arrow">↺ 위 단계로 돌아가기</div></div></div>
         <div class="lane"><div class="lane-title">최종 담당자</div><div class="lane-body"><div class="lane-node">예: 결과 정리</div><div class="lane-arrow">↓</div><div class="lane-node end">끝 + 담당자 알림</div></div></div>
       </div>
-    </section>
-    <section class="algorithm" aria-label="입력부터 출력까지의 알고리즘">
-      <article class="panel"><span class="tag">INPUT</span><h2>자료가 들어옵니다</h2><ul class="input-list"><li><strong>엔지니어 자료</strong><small>문서·시험 기록·구두 인수인계</small></li><li><strong>출처 정보</strong><small>작성자·개정·구성·원본 위치</small></li><li><strong>벤더 자료</strong><small>데이터시트·기능 선언</small></li></ul></article>
-      <div class="arrow" aria-hidden="true">→</div>
-      <article class="panel"><span class="tag">ALGORITHM</span><h2>다섯 번 확인합니다</h2><div class="steps"><div class="step"><b class="step-num">1</b><div><strong>등록</strong><span>출처 1~20개에 이름표를 붙인다</span></div></div><div class="step"><b class="step-num">2</b><div><strong>잘게 나누기</strong><span>문장을 작은 사실로 나눈다</span></div></div><div class="step"><b class="step-num">3</b><div><strong>맞춰 보기</strong><span>범위·구성·개정·시험을 비교한다</span></div></div><div class="step"><b class="step-num">4</b><div><strong>사람에게 묻기</strong><span>모호함과 누락을 원본 소유자에게 묻는다</span></div></div><div class="step"><b class="step-num">5</b><div><strong>마지막 확인</strong><span>틀린 곳을 고친 뒤 같은 형식으로 정리한다</span></div></div></div></article>
-      <div class="arrow" aria-hidden="true">→</div>
-      <article class="panel"><span class="tag">OUTPUT</span><h2>하나의 결과가 됩니다</h2><ul class="output-list"><li><strong>문서 상태</strong><small>ready / 확인 필요 / 충돌 / 자료 부족</small></li><li><strong>확인 큐</strong><small>누구에게 무엇을 물을지</small></li><li><strong>운영 권한</strong><small>보류 또는 거부</small></li><li><code>manufacturing-gate/v1</code><small>모든 입력에 같은 형식</small></li></ul></article>
     </section>
     <section class="demo" aria-labelledby="demo-heading"><h2 id="demo-heading">입력 유형을 바꿔보세요</h2><p>어떤 자료가 와도 결과 형식은 변하지 않습니다. 승인 대신 다음 확인 행동을 보여줍니다.</p><div class="buttons" role="tablist" aria-label="입력 유형"><button type="button" data-kind="vendor" aria-pressed="true">벤더 선언</button><button type="button" data-kind="handover" aria-pressed="false">구두 인수인계</button><button type="button" data-kind="conflict" aria-pressed="false">상충 시험성적서</button></div><div class="result" aria-live="polite" aria-atomic="true"><div class="result-label" id="result-label">확인 필요</div><div><strong id="result-title">부품 사실과 최종 제품 사실을 분리합니다.</strong><span id="result-copy">벤더 자료만으로 최종 제품의 적합성을 확정하지 않습니다.</span></div></div></section>
   </main>
