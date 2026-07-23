@@ -42,7 +42,7 @@
     .result span { color:#c9d9d4; font-size:.84rem; }
     code { color:#8ce0d3; font-size:.78rem; }
     .one-line { display:flex; align-items:stretch; gap:8px; margin-bottom:28px; overflow-x:auto; padding:4px 2px 12px; }
-    .one-line-step { min-width:170px; flex:1; padding:18px 16px; border:2px solid var(--mint); border-radius:18px; background:#fff; box-shadow:0 8px 20px rgba(16,32,46,.06); }
+    .one-line-step { min-width:155px; flex:1; padding:18px 16px; border:2px solid var(--mint); border-radius:18px; background:#fff; box-shadow:0 8px 20px rgba(16,32,46,.06); }
     .one-line-step b { display:block; margin-bottom:5px; color:var(--mint); font-size:.75rem; }
     .one-line-step strong { display:block; font-size:1.05rem; }
     .one-line-step span { display:block; color:var(--muted); font-size:.78rem; }
@@ -68,13 +68,15 @@
         <div class="one-line-arrow" aria-hidden="true">→</div>
         <div class="one-line-step"><b>4</b><strong>사람에게 묻기</strong><span>모르는 것은 만든 사람에게 물어요</span></div>
         <div class="one-line-arrow" aria-hidden="true">→</div>
-        <div class="one-line-step"><b>5 · OUTPUT</b><strong>한 장으로 정리</strong><span>확인 필요와 충돌을 함께 보여줘요</span></div>
+        <div class="one-line-step"><b>5 · 반복</b><strong>다시 확인하기</strong><span>틀린 곳을 고쳐 다시 살펴봐요</span></div>
+        <div class="one-line-arrow" aria-hidden="true">→</div>
+        <div class="one-line-step"><b>6 · OUTPUT</b><strong>한 장으로 정리</strong><span>확인 필요와 충돌을 함께 보여줘요</span></div>
       </div>
     </section>
     <section class="algorithm" aria-label="입력부터 출력까지의 알고리즘">
       <article class="panel"><span class="tag">INPUT</span><h2>자료가 들어옵니다</h2><ul class="input-list"><li><strong>엔지니어 자료</strong><small>문서·시험 기록·구두 인수인계</small></li><li><strong>출처 정보</strong><small>작성자·개정·구성·원본 위치</small></li><li><strong>벤더 자료</strong><small>데이터시트·기능 선언</small></li></ul></article>
       <div class="arrow" aria-hidden="true">→</div>
-      <article class="panel"><span class="tag">ALGORITHM</span><h2>다섯 번 확인합니다</h2><div class="steps"><div class="step"><b class="step-num">1</b><div><strong>등록</strong><span>출처 1~20개에 ID를 붙인다</span></div></div><div class="step"><b class="step-num">2</b><div><strong>분해</strong><span>문장을 작은 사실로 나눈다</span></div></div><div class="step"><b class="step-num">3</b><div><strong>대조</strong><span>범위·구성·개정·시험을 맞춘다</span></div></div><div class="step"><b class="step-num">4</b><div><strong>질문</strong><span>모호함과 누락을 원본 소유자에게 묻는다</span></div></div><div class="step"><b class="step-num">5</b><div><strong>게이트</strong><span>같은 출력 계약으로 멈춘다</span></div></div></div></article>
+      <article class="panel"><span class="tag">ALGORITHM</span><h2>다섯 번 확인합니다</h2><div class="steps"><div class="step"><b class="step-num">1</b><div><strong>등록</strong><span>출처 1~20개에 이름표를 붙인다</span></div></div><div class="step"><b class="step-num">2</b><div><strong>잘게 나누기</strong><span>문장을 작은 사실로 나눈다</span></div></div><div class="step"><b class="step-num">3</b><div><strong>맞춰 보기</strong><span>범위·구성·개정·시험을 비교한다</span></div></div><div class="step"><b class="step-num">4</b><div><strong>사람에게 묻기</strong><span>모호함과 누락을 원본 소유자에게 묻는다</span></div></div><div class="step"><b class="step-num">5</b><div><strong>마지막 확인</strong><span>틀린 곳을 고친 뒤 같은 형식으로 정리한다</span></div></div></div></article>
       <div class="arrow" aria-hidden="true">→</div>
       <article class="panel"><span class="tag">OUTPUT</span><h2>하나의 결과가 됩니다</h2><ul class="output-list"><li><strong>문서 상태</strong><small>ready / 확인 필요 / 충돌 / 자료 부족</small></li><li><strong>확인 큐</strong><small>누구에게 무엇을 물을지</small></li><li><strong>운영 권한</strong><small>보류 또는 거부</small></li><li><code>manufacturing-gate/v1</code><small>모든 입력에 같은 형식</small></li></ul></article>
     </section>
