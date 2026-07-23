@@ -5,7 +5,8 @@
 ## 바로 보기
 
 - [제조업파트너 공개 스토리](index.html)
-- [INPUT → ALGORITHM → OUTPUT 워크플로](workflow.html)
+- [동료용 스킬 설명 슬라이드](skill-slides.html)
+- [역할별 업무 흐름도](my-workflow-skill/assets/workflow-algorithm/index.html)
 
 ## 문제와 해결 방식
 
