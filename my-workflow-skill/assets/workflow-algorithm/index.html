@@ -62,6 +62,16 @@
     .yes, .no { display:inline-block; padding:2px 7px; border-radius:999px; font-size:.7rem; font-weight:900; }
     .yes { color:#126653; background:#ccefe5; }
     .no { color:#8c4a13; background:#ffe3bd; }
+    .swimlane { display:grid; grid-template-columns:repeat(4,1fr); margin:0 0 35px; border:2px solid var(--navy); background:#fff; overflow-x:auto; }
+    .lane { min-width:180px; border-right:2px solid var(--navy); }
+    .lane:last-child { border-right:0; }
+    .lane-title { padding:10px; text-align:center; color:#fff; background:var(--navy); font-weight:900; }
+    .lane-body { min-height:430px; display:flex; flex-direction:column; align-items:center; gap:10px; padding:18px 12px; }
+    .lane-node { width:100%; padding:11px 8px; text-align:center; border:1px solid var(--navy); border-radius:9px; background:#fff; font-size:.82rem; font-weight:800; }
+    .lane-node.start, .lane-node.end { border-radius:999px; border:2px solid var(--mint); }
+    .lane-node.decision { border-color:var(--orange); background:#fff0d5; clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%); padding:22px 8px; }
+    .lane-arrow { color:var(--navy); font-weight:900; }
+    .lane-note { margin:0 0 10px; color:var(--muted); font-size:.82rem; }
     footer { padding:25px 0; color:var(--muted); border-top:1px solid var(--line); font-size:.8rem; }
     @media (max-width:800px) { .algorithm { grid-template-columns:1fr; } .arrow { transform:rotate(90deg); height:26px; } }
     @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
@@ -98,6 +108,16 @@
         <div class="flow-node done">완료 + 담당자 알림</div>
       </div>
       <div class="flow-row" style="margin-top:12px"><div class="flow-node stop">아니오 → 자료 보충</div><div class="flow-arrow">↺ 다시 확인</div><div class="flow-node stop">아니오 → 충돌로 멈춤</div><div class="flow-arrow">↺ 다시 확인</div><div class="flow-node stop">아니오 → 사람에게 질문</div><div class="flow-arrow">↺ 다시 확인</div><div class="flow-node stop">아니오 → 다음 회차</div></div>
+    </section>
+    <section aria-labelledby="lane-heading">
+      <h2 id="lane-heading">누가 무엇을 하는지 보는 흐름도</h2>
+      <p class="lane-note">세로 줄은 담당자를, 아래로 내려가는 화살표는 순서를 뜻합니다.</p>
+      <div class="swimlane" aria-label="운영자, 자료 담당자, AI 검토, 최종 담당자의 업무 흐름">
+        <div class="lane"><div class="lane-title">운영자</div><div class="lane-body"><div class="lane-node start">시작</div><div class="lane-arrow">↓</div><div class="lane-node">자료를 받아 이름표 붙이기</div><div class="lane-arrow">→</div></div></div>
+        <div class="lane"><div class="lane-title">자료 담당자</div><div class="lane-body"><div class="lane-node">원본·조건·버전 알려주기</div><div class="lane-arrow">↓</div><div class="lane-node">모르는 질문에 답하기</div><div class="lane-arrow">→</div></div></div>
+        <div class="lane"><div class="lane-title">AI 검토</div><div class="lane-body"><div class="lane-node">문장을 작은 사실로 나누기</div><div class="lane-arrow">↓</div><div class="lane-node decision">자료가<br>맞나요?</div><div class="lane-arrow">↓ 아니오: 다시 묻기</div><div class="lane-node">사람 확인 기록하기</div></div></div>
+        <div class="lane"><div class="lane-title">최종 담당자</div><div class="lane-body"><div class="lane-node">예: 결과 정리</div><div class="lane-arrow">↓</div><div class="lane-node end">끝 + 담당자 알림</div></div></div>
+      </div>
     </section>
     <section class="algorithm" aria-label="입력부터 출력까지의 알고리즘">
       <article class="panel"><span class="tag">INPUT</span><h2>자료가 들어옵니다</h2><ul class="input-list"><li><strong>엔지니어 자료</strong><small>문서·시험 기록·구두 인수인계</small></li><li><strong>출처 정보</strong><small>작성자·개정·구성·원본 위치</small></li><li><strong>벤더 자료</strong><small>데이터시트·기능 선언</small></li></ul></article>
