@@ -1,0 +1,18 @@
+{
+  "scope": {
+    "system_id": "VENDOR-ONLY-01",
+    "configuration_id": "unknown-final-configuration",
+    "intended_use": "Vendor declaration without final product evidence."
+  },
+  "review_decision": "needs-fact-confirmation",
+  "critical_evidence": [
+    {"id": "VENDOR-DECL-01", "provenance": "public-vendor"}
+  ],
+  "required_critical_provenance": ["controlled-internal", "qualified-laboratory", "regulatory-authority", "approved-authority"],
+  "claims": [
+    {"id": "C-VENDOR", "status": "stated", "evidence_ids": ["VENDOR-DECL-01"]}
+  ],
+  "conflicts": [],
+  "confirmation_queue": ["Provide final configuration and application-specific evidence."],
+  "next_goal": "Collect final configuration and qualified evidence; vendor declaration alone is insufficient."
+}

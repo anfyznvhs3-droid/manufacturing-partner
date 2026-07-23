@@ -1,0 +1,33 @@
+{
+  "scope": {
+    "system_id": "TRAIN-GW-01",
+    "configuration_id": "B/FW-GW-0.8.1",
+    "intended_use": "Synthetic training only; non-safety telemetry gateway."
+  },
+  "review_decision": "ready",
+  "critical_evidence": [
+    {"id": "CC-002", "provenance": "synthetic-training"},
+    {"id": "SYNB-T01", "provenance": "synthetic-training"},
+    {"id": "SYNB-T02", "provenance": "synthetic-training"},
+    {"id": "SYNB-T03", "provenance": "synthetic-training"},
+    {"id": "SYNB-T04", "provenance": "synthetic-training"},
+    {"id": "SYNB-T05", "provenance": "synthetic-training"},
+    {"id": "SYNB-T06", "provenance": "synthetic-training"},
+    {"id": "SYNB-T07", "provenance": "synthetic-training"}
+  ],
+  "required_critical_provenance": [
+    "controlled-internal",
+    "qualified-laboratory",
+    "independent-security-assessment",
+    "regulatory-authority",
+    "approved-authority"
+  ],
+  "claims": [
+    {"id": "C01", "status": "stated", "evidence_ids": ["CC-002", "SYNB-T01"]},
+    {"id": "C02", "status": "stated", "evidence_ids": ["SYNB-T02", "SYNB-T03", "SYNB-T04"]},
+    {"id": "C03", "status": "stated", "evidence_ids": ["SYNB-T05", "SYNB-T06", "SYNB-T07"]}
+  ],
+  "conflicts": [],
+  "confirmation_queue": [],
+  "next_goal": "Replace the synthetic records with scoped real evidence before requesting authorization."
+}

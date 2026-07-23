@@ -1,0 +1,46 @@
+{
+  "contract": "manufacturing-gate/v1",
+  "scope": {
+    "system_id": "VENDOR-ONLY-01",
+    "configuration_id": "unknown-final-configuration",
+    "intended_use": "Vendor declaration without final product evidence."
+  },
+  "review_decision": "needs-fact-confirmation",
+  "operational_authorization": "pending-authority",
+  "evidence_summary": {
+    "critical_total": 1,
+    "by_provenance": {
+      "public-vendor": 1
+    },
+    "missing_required_provenance": [
+      "approved-authority",
+      "controlled-internal",
+      "qualified-laboratory",
+      "regulatory-authority"
+    ]
+  },
+  "claims": [
+    {
+      "id": "C-VENDOR",
+      "status": "stated",
+      "evidence_ids": [
+        "VENDOR-DECL-01"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "confirmation_queue": [
+    "Provide final configuration and application-specific evidence."
+  ],
+  "rules_applied": [
+    "DOC-READY v1",
+    "Manufacturing Gate Output Contract v1"
+  ],
+  "authorization_reasons": [
+    "review decision is not ready",
+    "fact confirmations remain",
+    "required evidence provenance is missing",
+    "approved authority evidence is missing"
+  ],
+  "next_goal": "Collect final configuration and qualified evidence; vendor declaration alone is insufficient."
+}

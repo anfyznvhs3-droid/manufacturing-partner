@@ -1,0 +1,40 @@
+{
+  "dataset_id": "public-semiconductor-source-anchored-candidates-v1",
+  "label_status": "pending-human-ratification",
+  "label_count": 30,
+  "labels": [
+    {"label_id":"ATM-01","source_id":"SRC-ATMEGA328P-001","page":1,"field":"architecture","expected_value":"8-bit AVR microcontroller","normalized_claim_ko":"8비트 AVR 마이크로컨트롤러이다."},
+    {"label_id":"ATM-02","source_id":"SRC-ATMEGA328P-001","page":1,"field":"instruction_set","expected_value":"131 instructions; most execute in one clock cycle","normalized_claim_ko":"명령어는 131개이며, 대부분은 한 클록 사이클에 실행된다."},
+    {"label_id":"ATM-03","source_id":"SRC-ATMEGA328P-001","page":1,"field":"working_registers","expected_value":"32 x 8-bit general-purpose working registers","normalized_claim_ko":"범용 작업 레지스터는 32개이며 각각 8비트다."},
+    {"label_id":"ATM-04","source_id":"SRC-ATMEGA328P-001","page":1,"field":"throughput","expected_value":"up to 16 MIPS at 16 MHz","normalized_claim_ko":"16 MHz에서 최대 16 MIPS 처리량을 명시한다."},
+    {"label_id":"ATM-05","source_id":"SRC-ATMEGA328P-001","page":1,"field":"flash_memory","expected_value":"32K bytes in-system self-programmable Flash","normalized_claim_ko":"인시스템 자기 프로그램 가능 Flash는 32K바이트다."},
+    {"label_id":"ATM-06","source_id":"SRC-ATMEGA328P-001","page":1,"field":"eeprom","expected_value":"1K bytes EEPROM","normalized_claim_ko":"EEPROM은 1K바이트다."},
+    {"label_id":"ATM-07","source_id":"SRC-ATMEGA328P-001","page":1,"field":"sram","expected_value":"2K bytes internal SRAM","normalized_claim_ko":"내부 SRAM은 2K바이트다."},
+    {"label_id":"ATM-08","source_id":"SRC-ATMEGA328P-001","page":1,"field":"timer_counter_8bit","expected_value":"two 8-bit Timer/Counters with separate prescaler and compare mode","normalized_claim_ko":"독립 프리스케일러·비교 모드를 가진 8비트 타이머/카운터가 2개다."},
+    {"label_id":"ATM-09","source_id":"SRC-ATMEGA328P-001","page":1,"field":"timer_counter_16bit","expected_value":"one 16-bit Timer/Counter with separate prescaler, compare mode, and capture mode","normalized_claim_ko":"프리스케일러·비교·캡처 모드를 가진 16비트 타이머/카운터가 1개다."},
+    {"label_id":"ATM-10","source_id":"SRC-ATMEGA328P-001","page":1,"field":"adc","expected_value":"8-channel 10-bit ADC in TQFP and QFN/MLF packages","normalized_claim_ko":"TQFP 및 QFN/MLF 패키지에서 8채널 10비트 ADC를 제공한다."},
+
+    {"label_id":"LM-01","source_id":"SRC-LM7800-001","page":1,"field":"output_current","expected_value":"up to 1.5 A output current","normalized_claim_ko":"출력 전류를 최대 1.5 A로 명시한다."},
+    {"label_id":"LM-02","source_id":"SRC-LM7800-001","page":1,"field":"fixed_voltage_options","expected_value":"fixed 5-V, 12-V, and 15-V options","normalized_claim_ko":"고정 출력 전압 옵션은 5 V, 12 V, 15 V다."},
+    {"label_id":"LM-03","source_id":"SRC-LM7800-001","page":1,"field":"internal_protection","expected_value":"internal thermal overload, short-circuit, and SOA protection","normalized_claim_ko":"내부 열 과부하·단락·SOA 보호를 명시한다."},
+    {"label_id":"LM-04","source_id":"SRC-LM7800-001","page":1,"field":"output_capacitor","expected_value":"output capacitance not required for stability","normalized_claim_ko":"안정성 확보를 위해 출력 커패시턴스가 필수는 아니다."},
+    {"label_id":"LM-05","source_id":"SRC-LM7800-001","page":1,"field":"topology","expected_value":"monolithic 3-terminal positive voltage regulator","normalized_claim_ko":"모놀리식 3단자 양(+) 전압 레귤레이터 제품군이다."},
+    {"label_id":"LM-06","source_id":"SRC-LM7800-001","page":1,"field":"heatsink_condition","expected_value":"over 1.5-A output current with adequate heat sinking","normalized_claim_ko":"적절한 방열 조건에서 1.5 A 초과 출력 전류가 가능하다고 설명한다."},
+    {"label_id":"LM-07","source_id":"SRC-LM7800-001","page":1,"field":"external_components","expected_value":"external components can obtain adjustable output voltages and currents","normalized_claim_ko":"외부 부품을 사용해 조정 가능한 출력 전압과 전류를 구성할 수 있다."},
+    {"label_id":"LM-08","source_id":"SRC-LM7800-001","page":1,"field":"output_bypass","expected_value":"output bypass is not necessary but improves transient response","normalized_claim_ko":"출력 바이패스는 필수는 아니지만 과도 응답을 개선한다."},
+    {"label_id":"LM-09","source_id":"SRC-LM7800-001","page":1,"field":"input_bypass_condition","expected_value":"input bypass is needed only when far from the power-supply filter capacitor","normalized_claim_ko":"전원 필터 커패시터에서 멀리 떨어진 경우에만 입력 바이패스가 필요하다."},
+    {"label_id":"LM-10","source_id":"SRC-LM7800-001","page":1,"field":"package","expected_value":"available in SOT-223 package","normalized_claim_ko":"SOT-223 패키지 옵션을 제공한다."},
+
+    {"label_id":"HC-01","source_id":"SRC-SN74HC595-001","page":1,"field":"shift_register","expected_value":"8-bit serial-in, parallel-out shift register","normalized_claim_ko":"8비트 직렬 입력·병렬 출력 시프트 레지스터다."},
+    {"label_id":"HC-02","source_id":"SRC-SN74HC595-001","page":1,"field":"operating_voltage","expected_value":"2 V to 6 V operating voltage range","normalized_claim_ko":"동작 전압 범위는 2 V~6 V다."},
+    {"label_id":"HC-03","source_id":"SRC-SN74HC595-001","page":1,"field":"output_load","expected_value":"3-state outputs can drive up to 15 LSTTL loads","normalized_claim_ko":"3상태 출력은 최대 15개 LSTTL 부하를 구동할 수 있다."},
+    {"label_id":"HC-04","source_id":"SRC-SN74HC595-001","page":1,"field":"supply_current","expected_value":"80 microampere maximum ICC","normalized_claim_ko":"최대 ICC는 80 µA다."},
+    {"label_id":"HC-05","source_id":"SRC-SN74HC595-001","page":1,"field":"propagation_delay","expected_value":"13 ns typical tpd","normalized_claim_ko":"전파 지연 tpd는 전형값 13 ns다."},
+    {"label_id":"HC-06","source_id":"SRC-SN74HC595-001","page":1,"field":"output_drive","expected_value":"plus or minus 6 mA output drive at 5 V","normalized_claim_ko":"5 V에서 ±6 mA 출력 구동을 명시한다."},
+    {"label_id":"HC-07","source_id":"SRC-SN74HC595-001","page":1,"field":"input_current","expected_value":"1 microampere maximum input current","normalized_claim_ko":"최대 입력 전류는 1 µA다."},
+    {"label_id":"HC-08","source_id":"SRC-SN74HC595-001","page":1,"field":"clear","expected_value":"shift register has direct clear","normalized_claim_ko":"시프트 레지스터에는 직접 클리어 기능이 있다."},
+    {"label_id":"HC-09","source_id":"SRC-SN74HC595-001","page":1,"field":"storage_register","expected_value":"8-bit shift register feeds an 8-bit D-type storage register","normalized_claim_ko":"8비트 시프트 레지스터가 8비트 D형 저장 레지스터에 연결된다."},
+    {"label_id":"HC-10","source_id":"SRC-SN74HC595-001","page":12,"field":"output_enable","expected_value":"OE high puts outputs QA through QH in high impedance; QH-prime is excluded","normalized_claim_ko":"OE가 High이면 QA~QH 출력은 고임피던스 상태이며 QH'는 제외된다."}
+  ],
+  "use_limit": "Candidate labels are source-anchored training data. A human must ratify each label against the downloaded PDF before any score is called factual accuracy."
+}

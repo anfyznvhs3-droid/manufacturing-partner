@@ -1,0 +1,12 @@
+{
+  "training_evidence": true,
+  "system_id": "TRAIN-GW-01",
+  "bom_revision": "B",
+  "firmware_id": "FW-GW-0.8.1",
+  "enclosure_id": "ENC-TRAIN-01",
+  "sensor_interface_id": "SENS-IF-TRAIN-A",
+  "cable_set_id": "CBL-TRAIN-01",
+  "product_scope": "Non-safety indoor industrial condition-monitoring gateway; telemetry only; no actuator control.",
+  "linked_change_id": "CC-002",
+  "warning": "Fictitious training configuration. Do not use for procurement, operation, certification, or safety decisions."
+}

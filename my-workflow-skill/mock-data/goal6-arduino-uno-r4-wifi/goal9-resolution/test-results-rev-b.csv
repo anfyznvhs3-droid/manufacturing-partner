@@ -1,0 +1,8 @@
+test_id,result,system_id,bom_revision,firmware_id,enclosure_id,sensor_interface_id,cable_set_id,criterion_id,evidence_id,observation
+T01,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-DOC-01,SYNB-T01,Training document register references CC-002 and configuration revision B.
+T02,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-EMI-01,SYNB-T02,Synthetic retrial uses configuration revision B; not a real EMC result.
+T03,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-EME-01,SYNB-T03,Synthetic retrial uses configuration revision B; not a real emissions result.
+T04,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-THERM-01,SYNB-T04,Synthetic result records no reset or unmarked stale data; no chamber test occurred.
+T05,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-SEC-01,SYNB-T05,Synthetic review confirms the stated no-default-credential policy; no security assessment occurred.
+T06,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-FAULT-01,SYNB-T06,Synthetic fault scenario marks telemetry invalid and records an event.
+T07,pass,TRAIN-GW-01,B,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-MARKET-01,SYNB-T07,Training market route requires real regulatory review and laboratory evidence before shipment; no market authorization is asserted.

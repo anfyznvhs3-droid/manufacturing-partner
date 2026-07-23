@@ -1,0 +1,10 @@
+{
+  "input": "lm7800-datasheet.pdf",
+  "sha256": "05e2795f3d729a877647070bdaedaecc8445f9137c13a4a9e25de19ecab53a9a",
+  "pages": 37,
+  "characters": 55762,
+  "nonempty_pages": 36,
+  "tokenizer": "cl100k_base",
+  "estimated_tokens": 17867,
+  "note": "Tokenizer baseline for comparison only; production model token counts can differ."
+}

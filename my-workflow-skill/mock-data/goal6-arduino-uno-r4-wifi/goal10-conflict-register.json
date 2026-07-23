@@ -1,0 +1,20 @@
+{
+  "scope": {
+    "system_id": "TRAIN-GW-01",
+    "configuration_id": "A/FW-GW-0.8.0 versus B/FW-GW-0.8.1",
+    "intended_use": "Conflict-path contract test only."
+  },
+  "review_decision": "blocked-by-conflict",
+  "critical_evidence": [
+    {"id": "ABX00087", "provenance": "public-vendor"}
+  ],
+  "required_critical_provenance": ["controlled-internal", "approved-authority"],
+  "claims": [
+    {"id": "C-CONFLICT", "status": "conflicting", "evidence_ids": ["SYN-T02", "SYNB-T02"]}
+  ],
+  "conflicts": [
+    {"field": "firmware_id", "values": ["FW-GW-0.8.0", "FW-GW-0.8.1"]}
+  ],
+  "confirmation_queue": [],
+  "next_goal": "Resolve the controlled configuration before using any test result."
+}

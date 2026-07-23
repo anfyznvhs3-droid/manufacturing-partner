@@ -1,0 +1,13 @@
+{
+  "input": "ABX00087-datasheet.pdf",
+  "sha256": "0bc5e5182cca4bd9ce4223e7b76198767d7deb07094fb09c5830e3849214f653",
+  "pages": 46,
+  "characters": 36119,
+  "nonempty_pages": 46,
+  "tokenizer": "cl100k_base",
+  "estimated_tokens": 15837,
+  "note": "Tokenizer baseline for comparison only; production model token counts can differ.",
+  "comparison_input": "evidence-fact-pack.md",
+  "comparison_tokens": 447,
+  "comparison_reduction_percent": 97.2
+}

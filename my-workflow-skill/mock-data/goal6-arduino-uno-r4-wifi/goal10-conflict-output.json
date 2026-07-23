@@ -1,0 +1,48 @@
+{
+  "contract": "manufacturing-gate/v1",
+  "scope": {
+    "system_id": "TRAIN-GW-01",
+    "configuration_id": "A/FW-GW-0.8.0 versus B/FW-GW-0.8.1",
+    "intended_use": "Conflict-path contract test only."
+  },
+  "review_decision": "blocked-by-conflict",
+  "operational_authorization": "denied",
+  "evidence_summary": {
+    "critical_total": 1,
+    "by_provenance": {
+      "public-vendor": 1
+    },
+    "missing_required_provenance": [
+      "approved-authority",
+      "controlled-internal"
+    ]
+  },
+  "claims": [
+    {
+      "id": "C-CONFLICT",
+      "status": "conflicting",
+      "evidence_ids": [
+        "SYN-T02",
+        "SYNB-T02"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "field": "firmware_id",
+      "values": [
+        "FW-GW-0.8.0",
+        "FW-GW-0.8.1"
+      ]
+    }
+  ],
+  "confirmation_queue": [],
+  "rules_applied": [
+    "DOC-READY v1",
+    "Manufacturing Gate Output Contract v1"
+  ],
+  "authorization_reasons": [
+    "review conflict or insufficient source"
+  ],
+  "next_goal": "Resolve the controlled configuration before using any test result."
+}

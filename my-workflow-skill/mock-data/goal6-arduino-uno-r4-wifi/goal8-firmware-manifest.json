@@ -1,0 +1,8 @@
+{
+  "training_evidence": true,
+  "firmware_id": "FW-GW-0.8.0",
+  "source_revision": "training-main-08",
+  "artifact_sha256": "SYNTHETIC-NOT-A-REAL-HASH",
+  "function_boundary": "Read sensor interface, mark invalid or stale data, record events, and transmit telemetry. No actuator command.",
+  "warning": "Fictitious training manifest; no executable firmware is supplied."
+}

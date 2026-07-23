@@ -1,0 +1,6 @@
+line,part_id,description,revision,traceability_note
+1,ABX00087,Arduino UNO R4 WiFi,A,Public vendor board used only as the training reference
+2,ENC-TRAIN-01,Non-metallic protected enclosure,A,Synthetic enclosure identifier
+3,SENS-IF-TRAIN-A,Low-voltage sensor interface,A,Synthetic interface; connected sensor not fixed
+4,CBL-TRAIN-01,Sensor and power cable set,A,Synthetic cable-set identifier
+5,PSU-TRAIN-01,Approved low-voltage external power supply,A,Synthetic power-supply identifier

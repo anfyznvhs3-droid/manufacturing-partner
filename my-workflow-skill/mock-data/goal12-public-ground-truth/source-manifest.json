@@ -1,0 +1,43 @@
+{
+  "dataset_id": "public-semiconductor-source-anchored-candidates-v1",
+  "retrieved_at": "2026-07-23",
+  "sources": [
+    {
+      "source_id": "SRC-ATMEGA328P-001",
+      "manufacturer": "Microchip",
+      "product": "ATmega328P Automotive",
+      "document_title": "ATmega328P 8-bit AVR Microcontroller with 32K Bytes In-System Programmable Flash",
+      "document_revision": "7810D-AVR-01/15",
+      "official_url": "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "local_file": "../../assets/public-sources/atmega328p-datasheet.pdf",
+      "sha256": "fb84858d0b12c695a12b13f0c74b962d81210247d440c7a24c0ed23dfabfdfaf",
+      "pages": 294,
+      "extracted_token_baseline": 200266
+    },
+    {
+      "source_id": "SRC-LM7800-001",
+      "manufacturer": "Texas Instruments",
+      "product": "LM340, LM340A and LM7805 family",
+      "document_title": "LM340, LM340A and LM7805 Family Wide VIN 1.5-A Fixed Voltage Regulators",
+      "document_revision": "SNOSBT0L, revised September 2016",
+      "official_url": "https://www.ti.com/lit/ds/symlink/lm7800.pdf",
+      "local_file": "../../assets/public-sources/lm7800-datasheet.pdf",
+      "sha256": "05e2795f3d729a877647070bdaedaecc8445f9137c13a4a9e25de19ecab53a9a",
+      "pages": 37,
+      "extracted_token_baseline": 17867
+    },
+    {
+      "source_id": "SRC-SN74HC595-001",
+      "manufacturer": "Texas Instruments",
+      "product": "SN54HC595, SN74HC595",
+      "document_title": "SNx4HC595 8-Bit Shift Registers With 3-State Output Registers",
+      "document_revision": "SCLS041J, revised October 2021",
+      "official_url": "https://www.ti.com/lit/ds/symlink/sn74hc595.pdf",
+      "local_file": "../../assets/public-sources/sn74hc595-datasheet.pdf",
+      "sha256": "0bd24136aa769a7b653f1cf70b422882e0b7fc8519c4ce3b4a6bc9f4a3fff2e3",
+      "pages": 41,
+      "extracted_token_baseline": 15672
+    }
+  ],
+  "scope_note": "These vendor data sheets support component facts only. They do not establish end-product conformity, operating authorization, or any certification claim."
+}

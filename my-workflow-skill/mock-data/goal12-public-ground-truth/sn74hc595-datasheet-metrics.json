@@ -1,0 +1,10 @@
+{
+  "input": "sn74hc595-datasheet.pdf",
+  "sha256": "0bd24136aa769a7b653f1cf70b422882e0b7fc8519c4ce3b4a6bc9f4a3fff2e3",
+  "pages": 41,
+  "characters": 47078,
+  "nonempty_pages": 37,
+  "tokenizer": "cl100k_base",
+  "estimated_tokens": 15672,
+  "note": "Tokenizer baseline for comparison only; production model token counts can differ."
+}

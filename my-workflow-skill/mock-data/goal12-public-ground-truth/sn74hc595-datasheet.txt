@@ -1,0 +1,1727 @@
+--- page 1 ---
+SNx4HC595 8-Bit Shift Registers With 3-State Output Registers
+1 Features
+• 8-bit serial-in, parallel-out shift
+• Wide operating voltage range of 2 V to 6 V
+• High-current 3-state outputs can drive up to 15 
+LSTTL loads
+• Low power consumption: 80-μA (maximum) ICC
+• tpd = 13 ns (typical)
+• ±6-mA output drive at 5 V
+• Low input current: 1 μA (maximum)
+• Shift register has direct clear
+• On products compliant to MIL-PRF-38535,
+all parameters are tested unless otherwise noted. 
+On all other products, production processing does 
+not necessarily include testing of all parameters.
+2 Applications
+• Network switches
+• Power infrastructure
+• LED displays
+• Servers
+3 Description
+The SNx4HC595 devices contain an 8-bit, serial-in, 
+parallel-out shift register that feeds an 8-bit D-type 
+storage register. The storage register has parallel 3-
+state outputs. Separate clocks are provided for both 
+the shift and storage register. The shift register has 
+a direct overriding clear ( SRCLR) input, serial (SER) 
+input, and serial outputs for cascading. When the 
+output-enable ( OE) input is high, the outputs are in 
+the high-impedance state.
+Device Information
+PART NUMBER PACKAGE
+(1)
+BODY SIZE (NOM)
+SN54HC595FK LCCC (20) 8.89 mm × 8.89 mm
+SN54HC595J CDIP (16) 21.34 mm × 6.92 mm
+SN74HC595N PDIP (16) 19.31 mm × 6.35 mm
+SN74HC595D SOIC (16) 9.90 mm × 3.90 mm
+SN74HC595DW SOIC (16) 10.30 mm × 7.50 mm
+SN74HC595DB SSOP (16) 6.20 mm × 5.30 mm
+SN74HC595PW TSSOP (16) 5.00 mm × 4.40 mm
+(1) For all available packages, see the orderable addendum at 
+the end of the data sheet.
+3R
+C3
+3S
+1D
+C1
+R
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+13
+12
+10
+11
+14
+15
+1
+2
+3
+4
+5
+6
+7
+9
+QA
+QB
+QC
+QD
+QE
+QF
+QG
+QH
+QH′
+OE
+SRCLR
+RCLK
+SRCLK
+SER
+Pin numbers shown are for the D, DB, DW, J, N, NS, PW, and W packages.
+Functional Block Diagram
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, 
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+
+--- page 2 ---
+Table of Contents
+1 Features............................................................................1
+2 Applications.....................................................................1
+3 Description.......................................................................1
+4 Revision History.............................................................. 2
+5 Pin Configuration and Functions...................................3
+6 Specifications.................................................................. 4
+6.1 Absolute Maximum Ratings........................................ 4
+6.2 ESD Ratings............................................................... 4
+6.3 Recommended Operating Conditions.........................4
+6.4 Thermal Information....................................................5
+6.5 Electrical Characteristics.............................................5
+6.6 Timing Requirements..................................................6
+6.7 Switching Characteristics............................................8
+6.8 Operating Characteristics........................................... 8
+6.9 Typical Characteristics................................................9
+7 Parameter Measurement Information..........................10
+8 Detailed Description...................................................... 11
+8.1 Overview................................................................... 11
+8.2 Functional Block Diagram......................................... 11
+8.3 Feature Description...................................................12
+8.4 Device Functional Modes..........................................12
+9 Application and Implementation..................................13
+9.1 Application Information............................................. 13
+9.2 Typical Application.................................................... 13
+10 Power Supply Recommendations..............................15
+11 Layout...........................................................................15
+11.1 Layout Guidelines................................................... 15
+11.2 Layout Example...................................................... 15
+12 Device and Documentation Support..........................16
+12.1 Documentation Support.......................................... 16
+12.2 Support Resources................................................. 16
+12.3 Trademarks.............................................................16
+12.4 Electrostatic Discharge Caution..............................16
+12.5 Glossary..................................................................16
+13 Mechanical, Packaging, and Orderable 
+Information.................................................................... 16
+4 Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+Changes from Revision H (November 2009) to Revision I (August 2015) Page
+• Added Applications section, Device Information table, Pin Configuration and Functions section, ESD Ratings 
+table, Thermal Information table, Feature Description section, Device Functional Modes, Application and 
+Implementation section, Power Supply Recommendations section, Layout section, Device and 
+Documentation Support section, and Mechanical, Packaging, and Orderable Information section .................. 1
+• Deleted Ordering Information table. ...................................................................................................................1
+• Added Military Disclaimer to Features list...........................................................................................................1
+Changes from Revision I (August 2015) to Revision J (October 2021) Page
+• Updated the device information table, ESD ratings table, and the device functional modes table to fit modern 
+data sheet standards.......................................................................................................................................... 1
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+2 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 3 ---
+5 Pin Configuration and Functions
+D, N, NS, J, DB, or PW Package
+16-Pin SOIC, PDIP, SO, CDIP, SSOP, or TSSOP
+Top View
+FK Package
+20-Pin LCCC
+Top View
+Table 5-1. Pin Functions
+PIN
+I/O(1) DESCRIPTION
+NAME
+SOIC, PDIP, 
+SO, CDIP, 
+SSOP, or 
+TSSOP
+LCCC
+GND 8 10 — Ground Pin
+OE 13 17 I Output Enable
+QA 15 19 O QA Output
+QB 1 2 O QB Output
+QC 2 3 O QC Output
+QD 3 4 O QD Output
+QE 4 5 O QE Output
+QF 5 7 O QF Output
+QG 6 8 O QG Output
+QH 7 9 O QH Output
+QH' 9 12 O QH' Output
+RCLK 12 14 I RCLK Input
+SER 14 18 I SER Input
+SRCLK 11 14 I SRCLK Input
+SRCLR 10 13 I SRCLR Input
+NC —
+1
+— No Connection
+16
+11
+16
+VCC — 20 — Power Pin
+(1) Signal Types: I = Input, O = Output, I/O = Input or Output.
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 3
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 4 ---
+6 Specifications
+6.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted)
+(1)
+MIN MAX UNIT
+VCC Supply voltage –0.5 7 V
+IIK Input clamp current
+(2)
+VI < 0 or VI > VCC ±20 mA
+IOK Output clamp current 
+(2)
+VO < 0 or VO > VCC ±20 mA
+IO Continuous output current VO = 0 to VCC ±35 mA
+Continuous current through VCC or GND ±70 mA
+TJ Junction temperature 150 °C
+Tstg Storage temperature –65 150 °C
+(1) Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings 
+only, and functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating 
+Conditions is not implied. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+(2) The input and output voltage ratings may be exceeded if the input and output current ratings are observed.
+6.2 ESD Ratings
+VALUE UNIT
+V(ESD) Electrostatic discharge
+Human body model (HBM), per ANSI/ESDA/JEDEC JS-001(1) 2000
+V
+Charged device model (CDM), per ANSI/ESDA/JEDEC JS-002(2) 1000
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+6.3 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)(1)
+SN54HC595 SN74HC595
+UNIT
+MIN NOM MAX MIN NOM MAX
+VCC Supply voltage 2 5 6 2 5 6 V
+VIH High-level input voltage
+VCC = 2 V 1.5 1.5
+VVCC = 4.5 V 3.15 3.15
+VCC = 6 V 4.2 4.2
+VIL Low-level input voltage
+VCC = 2 V 0.5 0.5
+VVCC = 4.5 V 1.35 1.35
+VCC = 6 V 1.8 1.8
+VI Input voltage 0 VCC 0 VCC V
+VO Output voltage 0 VCC 0 VCC V
+Δt/Δv Input transition rise or fall time(2)
+VCC = 2 V 1000 1000
+nsVCC = 4.5 V 500 500
+VCC = 6 V 400 400
+TA Operating free-air temperature –55 125 –40 85 °C
+(1) All unused inputs of the device must be held at VCC or GND to ensure proper device operation. See the TI application report, 
+Implications of Slow or Floating CMOS Inputs, SCBA004.
+(2) If this device is used in the threshold region (from VILmax = 0.5 V to VIH min = 1.5 V), there is a potential to go into the wrong state 
+from induced grounding, causing double clocking. Operating with the inputs at tt = 1000 ns and VCC = 2 V does not damage the device; 
+however, functionally, the CLK inputs are not ensured while in the shift, count, or toggle operating modes.
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+4 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 5 ---
+6.4 Thermal Information
+THERMAL METRIC(1)
+SN74HC595
+UNITD (SOIC) DB (SSOP) DW (SOIC) N (PDIP) NS (SO) PW 
+(TSSOP)
+16 PINS 16 PINS 16 PINS 16 PINS 16 PINS 16 PINS
+RθJA Junction-to-ambient thermal resistance 73 82 57 67 64 108 °C/W
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application 
+report, SPRA953.
+6.5 Electrical Characteristics
+over recommended operating free-air temperature range (unless otherwise noted)
+PARAMETER TEST CONDITIONS VCC
+TA = 25°C SN54HC595 SN74HC595
+UNIT
+MIN TYP MAX MIN MAX MIN MAX
+VOH VI = VIH or VIL
+IOH = –20 μA
+2 V 1.9 1.998 1.9 1.9
+V
+4.5 V 4.4 4.499 4.4 4.4
+6 V 5.9 5.999 5.9 5.9
+QH′, IOH = –4 mA
+4.5 V
+3.98 4.3 3.7 3.84
+QA – QH, IOH = –6 mA 3.98 4.3 3.7 3.84
+QH′, IOH = −5.2 mA
+6 V
+5.48 5.8 5.2 5.34
+QA – QH, IOH = –7.8 mA 5.48 5.8 5.2 5.34
+VOL VI = VIH or VIL
+IOL = 20 μA
+2 V 0.002 0.1 0.1 0.1
+V
+4.5 V 0.001 0.1 0.1 0.1
+6 V 0.001 0.1 0.1 0.1
+QH′, IOL = 4 mA
+4.5 V
+0.17 0.26 0.4 0.33
+QA – QH, IOL = 6 mA 0.17 0.26 0.4 0.33
+QH′, IOL = 5.2 mA
+6 V
+0.15 0.26 0.4 0.33
+QA – QH, IOL = 7.8 mA 0.15 0.26 0.4 0.33
+II VI = VCC or 0 6 V ±0.1 ±100 ±1000 ±1000 nA
+IOZ VO = VCC or 0, QA – QH 6 V ±0.01 ±0.5 ±10 ±5 µA
+ICC VI = VCC or 0, IO = 0 6 V 8 160 80 µA
+Ci
+2 V to
+6 V 3 10 10 10 pF
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 5
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 6 ---
+6.6 Timing Requirements
+over operating free-air temperature range (unless otherwise noted)
+VCC
+TA = 25°C SN54HC595 SN74HC595
+UNIT
+MIN MAX MIN MAX MIN MAX
+fclock Clock frequency
+2 V 6 4.2 5
+MHz4.5 V 31 21 25
+6 V 36 25 29
+tw Pulse duration
+SRCLK or RCLK high or low
+2 V 80 120 100
+ns
+4.5 V 16 24 20
+6 V 14 20 17
+SRCLR low
+2 V 80 120 100
+4.5 V 16 24 20
+6 V 14 20 17
+tsu Set-up time
+SER before SRCLK↑
+2 V 100 150 125
+ns
+4.5 V 20 30 25
+6 V 17 25 21
+SRCLK↑ before RCLK↑(1)
+2 V 75 113 94
+4.5 V 15 23 19
+6 V 13 19 16
+SRCLR low before RCLK↑
+2 V 50 75 65
+4.5 V 10 15 13
+6 V 9 13 11
+SRCLR high (inactive) before SRCLK↑
+2 V 50 75 60
+4.5 V 10 15 12
+6 V 9 13 11
+th Hold time, SER after SRCLK↑
+2 V 0 0 0
+ns4.5 V 0 0 0
+6 V 0 0 0
+(1) This set-up time allows the storage register to receive stable data from the shift register. The clocks can be tied together, in which case 
+the shift register is one clock pulse ahead of the storage register.
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+6 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 7 ---
+SRCLK
+SER
+RCLK
+SRCLR
+OE
+QA
+QB
+QC
+QD
+QE
+QF
+QG
+QH
+QH’
+implies that the output is in 3-State mode.NOTE:
+Figure 6-1. Timing Diagram
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 7
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 8 ---
+6.7 Switching Characteristics
+Over recommended operating free-air temperature range.
+PARAMETER FROM
+(INPUT)
+TO
+(OUTPUT)
+LOAD 
+CAPACITANCE VCC
+TA = 25°C SN54HC595 SN74HC595
+UNIT
+MIN TYP MAX MIN MAX MIN MAX
+fmax 50 pF
+2 V 6 26 4.2 5
+MHz4.5 V 31 38 21 25
+6 V 36 42 25 29
+tpd
+SRCLK QH′ 50 pF
+2 V 50 160 240 200
+ns
+4.5 V 17 32 48 40
+6 V 14 27 41 34
+RCLK QA – QH 50 pF
+2 V 50 150 225 187
+4.5 V 17 30 45 37
+6 V 14 26 38 32
+tPHL SRCLR QH′ 50 pF
+2 V 51 175 261 219
+ns4.5 V 18 35 52 44
+6 V 15 30 44 37
+ten OE QA – QH 50 pF
+2 V 40 150 255 187
+ns4.5 V 15 30 45 37
+6 V 13 26 38 32
+tdis OE QA – QH 50 pF
+2 V 42 200 300 250
+ns4.5 V 23 40 60 50
+6 V 20 34 51 43
+tt
+QA – QH 50 pF
+2 V 28 60 90 75
+ns
+4.5 V 8 12 18 15
+6 V 6 10 15 13
+QH′ 50 pF
+2 V 28 75 110 95
+4.5 V 8 15 22 19
+6 V 6 13 19 16
+tpd RCLK QA – QH 150 pf
+2 V 60 200 300 250
+ns4.5 V 22 40 60 50
+6 V 19 34 51 43
+ten OE QA – QH 150 pf
+2 V 70 200 298 250
+ns4.5 V 23 40 60 50
+6 V 19 34 51 43
+tt QA – QH 150 pf
+2 V 45 210 315 265
+ns4.5 V 17 42 63 53
+6 V 13 36 53 45
+6.8 Operating Characteristics
+TA = 25°C
+PARAMETER TEST CONDITIONS TYP UNIT
+Cpd Power dissipation capacitance No load 400 pF
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+8 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 9 ---
+6.9 Typical Characteristics
+0 1 2 3 4 5 6
+VCC(V) 
+ICC(nA) 
+0 
+5 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+-5 
+OUTPUTS = µ+,¶
+OE = µ/2:¶
+Figure 6-2. SN74HC595 ICC vs. VCC 
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 9
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 10 ---
+7 Parameter Measurement Information
+VOLTAGE WAVEFORMS
+SETUP AND HOLD AND INPUT RISE AND FALL TIMES
+VOLTAGE WAVEFORMS
+PULSE DURATIONS
+thtsu
+50%
+50%50%
+10%10%
+90% 90%
+VCC
+VCC
+0 V
+0 V
+tr tf
+Reference
+Input
+Data
+Input
+50%High-Level
+Pulse 50%
+VCC
+0 V
+50% 50%
+VCC
+0 V
+tw
+Low-Level
+Pulse
+VOLTAGE WAVEFORMS
+PROPAGATION DELAY AND OUTPUT TRANSITION TIMES
+50%
+50%50%
+10%10%
+90% 90%
+VCC
+VOH
+VOL
+0 V
+tr tf
+Input
+In-Phase
+Output
+50%
+tPLH tPHL
+50% 50%
+10% 10%
+90%90%
+VOH
+VOL
+trtf
+tPHL tPLH
+Out-of-
+Phase
+Output
+50%
+10%
+90%
+VCC
+≈ VCC
+VOL
+0 V
+Output
+Control
+(Low-Level
+Enabling)
+Output
+Waveform 1
+(See Note B)
+50%
+tPZL tPLZ
+VOLTAGE WAVEFORMS
+ENABLE AND DISABLE TIMES FOR 3-STATE OUTPUTS
+VOH
+≈ 0 V
+50%
+50%
+tPZH tPHZ
+Output
+Waveform 2
+(See Note B)
+≈ VCC
+Test
+PointFrom Output
+Under Test
+RL
+VCC
+S1
+S2
+LOAD CIRCUIT
+PARAMETER C L
+tPZH
+tpd or tt
+tdis
+ten
+tPZL
+tPHZ
+tPLZ
+1 kΩ
+1 kΩ
+50 pF
+or
+150 pF
+50 pF
+Open Closed
+RL S1
+Closed Open
+S2
+Open Closed
+Closed Open
+50 pF
+or
+150 pF
+Open Open
+NOTES: A.   C L includes probe and test-fixture capacitance.
+B.   Waveform 1 is for an output with internal conditions such that the output is low, except when disabled by the output control.
+Waveform 2 is for an output with internal conditions such that the output is high, except when disabled by the output control.
+C. Phase relationships between waveforms were chosen arbitrarily. All input pulses are supplied by generators having the followi ng
+characteristics: PRR ≤ 1 MHz, ZO = 50 Ω , tr = 6 ns, tf = 6 ns.
+D. For clock inputs, f max is measured when the input duty cycle is 50%.
+E. The outputs are measured one at a time, with one input trans ition per measurement.
+F . tPLZ and tPHZ are the same as tdis.
+G. t PZL and tPZH are the same as ten.
+H. t PLH and tPHL are the same as tpd.
+CL
+(see Note A)
+Figure 7-1. Load Circuit and Voltage Waveforms
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+10 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 11 ---
+8 Detailed Description
+8.1 Overview
+The SNx4HC595 is part of the HC family of logic devices intended for CMOS applications. The SNx4HC595 is 
+an 8-bit shift register that feeds an 8-bit D-type storage register.
+Both the shift register clock (SRCLK) and storage register clock (RCLK) are positive-edge triggered. If both 
+clocks are connected together, the shift register always is one clock pulse ahead of the storage register.
+8.2 Functional Block Diagram
+3R
+C3
+3S
+1D
+C1
+R
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+3R
+C3
+3S
+2R
+C2
+R
+2S
+13
+12
+10
+11
+14
+15
+1
+2
+3
+4
+5
+6
+7
+9
+QA
+QB
+QC
+QD
+QE
+QF
+QG
+QH
+QH′
+OE
+SRCLR
+RCLK
+SRCLK
+SER
+Pin numbers shown are for the D, DB, DW, J, N, NS, PW, and W packages.
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 11
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 12 ---
+8.3 Feature Description
+The SNx4HC595 devices are 8-bit Serial-In, Parallel-Out Shift Registers. They have a wide operating current of 
+2 V to 6 V, and the high-current 3-state outputs can drive up to 15 LSTTL Loads. The devices have a low power 
+consumption of 80-μA (Maximum) ICC. Additionally, the devices have a low input current of 1 μA (Maximum) and 
+a ±6-mA Output Drive at 5 V.
+8.4 Device Functional Modes
+Table 8-1 lists the functional modes of the SNx4HC595 devices.
+Table 8-1. Function Table
+INPUTS
+FUNCTION
+SER SRCLK SRCLR RCLK OE
+X X X X H Outputs QA – QH are disabled.
+X X X X L Outputs QA – QH are enabled.
+X X L X X Shift register is cleared.
+L ↑ H X X
+First stage of the shift register goes low.
+Other stages store the data of previous stage, 
+respectively.
+H ↑ H X X
+First stage of the shift register goes high.
+Other stages store the data of previous stage, 
+respectively.
+X X X ↑ X Shift-register data is stored in the storage register.
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+12 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 13 ---
+9 Application and Implementation
+Note
+Information in the following applications sections is not part of the TI component specification, 
+and TI does not warrant its accuracy or completeness. TI’s customers are responsible for 
+determining suitability of components for their purposes, as well as validating and testing their design 
+implementation to confirm system functionality.
+9.1 Application Information
+The SNx4HC595 is a low-drive CMOS device that can be used for a multitude of bus interface type applications 
+where output ringing is a concern. The low drive and slow edge rates will minimize overshoot and undershoot on 
+the outputs.
+9.2 Typical Application
+Controller
+SRCLR
+SRCLK 
+RCLK5
+OE 
+SER 
+QA 
+QB
+QC
+QD
+QE 
+QF
+QG
+VCC
+816
+0.1 F
+ 
+GND
+15
+1
+2
+3
+4
+5
+6
+7 QH 
+10
+11
+12
+13
+14
+9 Q+¶ 
+ 
+ 
+560 
+560 
+560 
+560 
+560 
+560 
+560 
+560 
++5V
+Figure 9-1. Typical Application Schematic
+9.2.1 Design Requirements
+This device uses CMOS technology and has balanced output drive. Take care to avoid bus contention because 
+it can drive currents that would exceed maximum limits. The high drive will also create fast edges into light loads 
+so routing and load conditions should be considered to prevent ringing.
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 13
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 14 ---
+9.2.2 Detailed Design Procedure
+• Recommended input conditions
+– Specified high and low levels. See (VIH and VIL) in Section 6.3 table.
+– Specified high and low levels. See (VIH and VIL) in Section 6.3 table.
+– Inputs are overvoltage tolerant allowing them to go as high as 5.5 V at any valid VCC
+• Recommend output conditions
+– Load currents should not exceed 35 mA per output and 70 mA total for the part
+– Outputs should not be pulled above VCC
+9.2.3 Application Curves
+0 2 4 6 8
+VCC(V) 
+tpd(ns) 
+10
+20
+30
+40 
+50 
+60 
+0 
+Figure 9-2. SN75HC595 tpd vs. VCC 
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+14 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 15 ---
+10 Power Supply Recommendations
+The power supply can be any voltage between the minimum and maximum supply voltage rating located in 
+Section 6.3 table.
+Each V CC pin should have a good bypass capacitor to prevent power disturbance. For devices with a single 
+supply, 0.1 μf is recommended; if there are multiple V CC pins, then 0.01 μf or 0.022 μf is recommended for each 
+power pin. It is acceptable to parallel multiple bypass caps to reject different frequencies of noise. A 0.1 μf and 
+a 1 μf are commonly used in parallel. The bypass capacitor should be installed as close to the power pin as 
+possible for best results.
+11 Layout
+11.1 Layout Guidelines
+When using multiple-bit logic devices, inputs should never float.
+In many cases, functions or parts of functions of digital logic devices are unused, for example, when only two 
+inputs of a triple-input AND gate are used or only 3 of the 4 buffer gates are used. Such input pins should not 
+be left unconnected because the undefined voltages at the outside connections result in undefined operational 
+states. Figure 11-1 specifies the rules that must be observed under all circumstances. All unused inputs of digital 
+logic devices must be connected to a high or low bias to prevent them from floating. The logic level that should 
+be applied to any particular unused input depends on the function of the device. Generally they will be tied to 
+GND or V CC, whichever makes more sense or is more convenient. It is generally acceptable to float outputs, 
+unless the part is a transceiver. If the transceiver has an output enable pin, it will disable the output section of the 
+part when asserted. This will not disable the input section of the I/Os, so they cannot float when disabled.
+11.2 Layout Example
+Vcc
+Unused Input
+Input
+Output
+Input
+Unused Input Output
+Figure 11-1. Layout Diagram
+www.ti.com
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 15
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 16 ---
+12 Device and Documentation Support
+12.1 Documentation Support
+12.1.1 Related Documentation
+For related documentation, see the following:
+• Texas Instruments, Implications of Slow or Floating CMOS Inputs application brief
+12.2 Support Resources
+TI E2E ™ support forums  are an engineer's go-to source for fast, verified answers and design help — straight 
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do 
+not necessarily reflect TI's views; see TI's Terms of Use.
+12.3 Trademarks
+TI E2E™ is a trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+12.4 Electrostatic Discharge Caution
+This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled 
+with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may 
+be more susceptible to damage because very small parametric changes could cause the device not to meet its published 
+specifications.
+12.5 Glossary
+TI Glossary This glossary lists and explains terms, acronyms, and definitions.
+13 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical packaging and orderable information. This information is the most 
+current data available for the designated devices. This data is subject to change without notice and revision of 
+this document. For browser based versions of this data sheet, refer to the left hand navigation.
+SN54HC595, SN74HC595
+SCLS041J – DECEMBER 1982 – REVISED OCTOBER 2021 www.ti.com
+16 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: SN54HC595 SN74HC595
+
+--- page 17 ---
+PACKAGE OPTION ADDENDUM
+www.ti.com 15-Jul-2026
+PACKAGING INFORMATION
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+5962-86816012A Active Production LCCC (FK) | 20 55 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-
+86816012A
+SNJ54HC
+595FK
+5962-8681601EA Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601EA
+SNJ54HC595J
+5962-8681601VEA Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601VE
+A
+SNV54HC595J
+5962-8681601VEA.A Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601VE
+A
+SNV54HC595J
+5962-8681601VFA Active Production CFP (W) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601VF
+A
+SNV54HC595W
+5962-8681601VFA.A Active Production CFP (W) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601VF
+A
+SNV54HC595W
+SN54HC595J Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 SN54HC595J
+SN54HC595J.A Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 SN54HC595J
+SN74HC595DBR Active Production SSOP (DB) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DBR.A Active Production SSOP (DB) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DBRE4 Active Production SSOP (DB) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DBRG4 Active Production SSOP (DB) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DR Active Production SOIC (D) | 16 2500 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DR.A Active Production SOIC (D) | 16 2500 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DRE4 Active Production null (null) | 2500 | LARGE T&R - Call TI Call TI -40 to 85
+SN74HC595DRG3 Active Production SOIC (D) | 16 2500 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DRG3.A Active Production SOIC (D) | 16 2500 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DRG4 Active Production SOIC (D) | 16 2500 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DRG4.A Active Production SOIC (D) | 16 2500 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DT Obsolete Production SOIC (D) | 16 - - Call TI Call TI -40 to 85 HC595
+Addendum-Page 1
+
+--- page 18 ---
+PACKAGE OPTION ADDENDUM
+www.ti.com 15-Jul-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+SN74HC595DW Obsolete Production SOIC (DW) | 16 - - Call TI Call TI -40 to 85
+SN74HC595DWR Active Production SOIC (DW) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595DWR.A Active Production SOIC (DW) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595N Active Production PDIP (N) | 16 25 | TUBE Yes NIPDAU N/A for Pkg Type -40 to 85 SN74HC595N
+SN74HC595N.A Active Production PDIP (N) | 16 25 | TUBE Yes NIPDAU N/A for Pkg Type -40 to 85 SN74HC595N
+SN74HC595NE4 Active Production PDIP (N) | 16 25 | TUBE Yes NIPDAU N/A for Pkg Type -40 to 85 SN74HC595N
+SN74HC595NSR Active Production SOP (NS) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595NSR.A Active Production SOP (NS) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595PW Obsolete Production TSSOP (PW) | 16 - - Call TI Call TI -40 to 85 HC595
+SN74HC595PWR Active Production TSSOP (PW) | 16 2000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595PWR.A Active Production TSSOP (PW) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595PWRG4 Active Production TSSOP (PW) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SN74HC595PWRG4.A Active Production TSSOP (PW) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 HC595
+SNJ54HC595FK Active Production LCCC (FK) | 20 55 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-
+86816012A
+SNJ54HC
+595FK
+SNJ54HC595FK.A Active Production LCCC (FK) | 20 55 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-
+86816012A
+SNJ54HC
+595FK
+SNJ54HC595J Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601EA
+SNJ54HC595J
+SNJ54HC595J.A Active Production CDIP (J) | 16 25 | TUBE No SNPB N/A for Pkg Type -55 to 125 5962-8681601EA
+SNJ54HC595J
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+Addendum-Page 2
+
+--- page 19 ---
+PACKAGE OPTION ADDENDUM
+www.ti.com 15-Jul-2026
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+ OTHER QUALIFIED VERSIONS OF SN54HC595, SN54HC595-SP, SN74HC595 :
+•Catalog : SN74HC595, SN54HC595
+•Enhanced Product : SN74HC595-EP, SN74HC595-EP
+•Military : SN54HC595
+•Space : SN54HC595-SP
+ NOTE: Qualified Version Definitions:
+•Catalog - TI's standard catalog product
+•Enhanced Product - Supports Defense, Aerospace and Medical Applications
+•Military - QML certified for Military and Defense Applications
+•Space - Radiation tolerant, ceramic packaging and qualified for use in Space-based application
+Addendum-Page 3
+
+--- page 20 ---
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 4-Jul-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0B0K0WDimension designed to accommodate the component lengthDimension designed to accommodate the component thicknessOverall width of the carrier tapePitch between successive cavity centersDimension designed to accommodate the component width
+TAPE DIMENSIONSK0 P1B0WA0Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket QuadrantsSprocket HolesQ1Q1Q2Q2Q3Q3Q4Q4User Direction of Feed
+P1ReelDiameter
+ 
+*All dimensions are nominal
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+SN74HC595DBR SSOP DB 16 2000 330.0 16.4 8.35 6.6 2.4 12.0 16.0 Q1
+SN74HC595DR SOIC D 16 2500 330.0 16.4 6.5 10.3 2.1 8.0 16.0 Q1
+SN74HC595DR SOIC D 16 2500 330.0 16.4 6.5 10.3 2.1 8.0 16.0 Q1
+SN74HC595DRG3 SOIC D 16 2500 330.0 16.4 6.6 9.3 2.1 8.0 16.0 Q1
+SN74HC595DRG4 SOIC D 16 2500 330.0 16.4 6.5 10.3 2.1 8.0 16.0 Q1
+SN74HC595DRG4 SOIC D 16 2500 330.0 16.4 6.5 10.3 2.1 8.0 16.0 Q1
+SN74HC595DWR SOIC DW 16 2000 330.0 16.4 10.75 10.7 2.7 12.0 16.0 Q1
+SN74HC595NSR SOP NS 16 2000 330.0 16.4 8.1 10.4 2.5 12.0 16.0 Q1
+SN74HC595NSR SOP NS 16 2000 330.0 16.4 8.45 10.55 2.5 12.0 16.2 Q1
+SN74HC595PWR TSSOP PW 16 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+SN74HC595PWR TSSOP PW 16 2000 330.0 12.4 6.9 5.3 1.6 8.0 12.0 Q1
+SN74HC595PWR TSSOP PW 16 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+SN74HC595PWRG4 TSSOP PW 16 2000 330.0 12.4 6.9 5.3 1.6 8.0 12.0 Q1
+SN74HC595PWRG4 TSSOP PW 16 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+Pack Materials-Page 1
+
+--- page 21 ---
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 4-Jul-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W LH
+ 
+*All dimensions are nominal
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+SN74HC595DBR SSOP DB 16 2000 353.0 353.0 32.0
+SN74HC595DR SOIC D 16 2500 340.5 336.1 32.0
+SN74HC595DR SOIC D 16 2500 340.5 336.1 32.0
+SN74HC595DRG3 SOIC D 16 2500 366.0 364.0 50.0
+SN74HC595DRG4 SOIC D 16 2500 353.0 353.0 32.0
+SN74HC595DRG4 SOIC D 16 2500 340.5 336.1 32.0
+SN74HC595DWR SOIC DW 16 2000 350.0 350.0 43.0
+SN74HC595NSR SOP NS 16 2000 353.0 353.0 32.0
+SN74HC595NSR SOP NS 16 2000 353.0 353.0 32.0
+SN74HC595PWR TSSOP PW 16 2000 353.0 353.0 32.0
+SN74HC595PWR TSSOP PW 16 2000 367.0 367.0 35.0
+SN74HC595PWR TSSOP PW 16 2000 356.0 356.0 35.0
+SN74HC595PWRG4 TSSOP PW 16 2000 367.0 367.0 35.0
+SN74HC595PWRG4 TSSOP PW 16 2000 353.0 353.0 32.0
+Pack Materials-Page 2
+
+--- page 22 ---
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 4-Jul-2026
+TUBE
+ 
+ 
+L - Tube length
+T - Tube  
+height
+W - Tube  
+width
+B - Alignment groove width
+ 
+ 
+*All dimensions are nominal
+Device Package Name Package Type Pins SPQ L (mm) W (mm) T (µm) B (mm)
+5962-86816012A FK LCCC 20 55 506.98 12.06 2030 NA
+5962-8681601EA J CDIP 16 25 506.98 15.24 13440 NA
+5962-8681601VEA J CDIP 16 25 506.98 15.24 13440 NA
+5962-8681601VEA.A J CDIP 16 25 506.98 15.24 13440 NA
+5962-8681601VFA W CFP 16 25 506.98 26.16 6220 NA
+5962-8681601VFA.A W CFP 16 25 506.98 26.16 6220 NA
+SN74HC595N N PDIP 16 25 506 13.97 11230 4.32
+SN74HC595N N PDIP 16 25 506 13.97 11230 4.32
+SN74HC595N.A N PDIP 16 25 506 13.97 11230 4.32
+SN74HC595N.A N PDIP 16 25 506 13.97 11230 4.32
+SN74HC595NE4 N PDIP 16 25 506 13.97 11230 4.32
+SN74HC595NE4 N PDIP 16 25 506 13.97 11230 4.32
+SNJ54HC595FK FK LCCC 20 55 506.98 12.06 2030 NA
+SNJ54HC595FK.A FK LCCC 20 55 506.98 12.06 2030 NA
+SNJ54HC595J J CDIP 16 25 506.98 15.24 13440 NA
+SNJ54HC595J.A J CDIP 16 25 506.98 15.24 13440 NA
+Pack Materials-Page 3
+
+--- page 23 ---
+
+
+--- page 24 ---
+www.ti.com
+PACKAGE OUTLINE
+C
+14X 0.65
+2X
+4.55
+16X 0.38
+0.22
+8.2
+7.4 TYP
+SEATING
+PLANE
+0.05 MIN
+0.25
+GAGE PLANE
+0 -8
+2 MAX
+0.25
+0.09
+B 5.6
+5.0
+NOTE 4
+A
+6.5
+5.9
+NOTE 3
+0.95
+0.55
+SSOP - 2 mm max heightDB0016A
+SMALL OUTLINE PACKAGE
+4220763/A   05/2022
+1
+8
+9
+16
+0.1 C A B
+PIN 1 INDEX AREA
+SEE DETAIL  A
+0.1 C
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. Reference JEDEC registration MO-150.
+ 
+A  15
+DETAIL A
+TYPICAL
+SCALE  1.500
+
+--- page 25 ---
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+16X (1.85)
+16X (0.45)
+14X (0.65)
+(7)
+(R0.05) TYP
+SSOP - 2 mm max heightDB0016A
+SMALL OUTLINE PACKAGE
+4220763/A   05/2022
+NOTES: (continued)
+ 
+5. Publication IPC-7351 may have alternate designs. 
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE: 10X
+SYMM
+SYMM
+1
+8 9
+16
+15.000
+METALSOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+OPENING
+EXPOSED METALEXPOSED METAL
+SOLDER MASK DETAILS
+NON-SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK
+DEFINED
+
+--- page 26 ---
+www.ti.com
+EXAMPLE STENCIL DESIGN
+16X (1.85)
+16X (0.45)
+14X (0.65)
+(7)
+(R0.05) TYP
+SSOP - 2 mm max heightDB0016A
+SMALL OUTLINE PACKAGE
+4220763/A   05/2022
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+8. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE: 10X
+SYMM
+SYMM
+1
+8 9
+16
+
+--- page 27 ---
+www.ti.com
+GENERIC PACKAGE VIEW
+This image is a representation of the package family, actual package may vary.
+Refer to the product data sheet for package details.
+SOIC - 2.65 mm max heightDW 16
+SMALL OUTLINE INTEGRATED CIRCUIT7.5 x 10.3, 1.27 mm pitch
+4224780/A
+
+--- page 28 ---
+www.ti.com
+PACKAGE OUTLINE
+C
+ TYP10.63
+9.97
+2.65 MAX
+14X 1.27
+16X 0.51
+0.31
+2X
+8.89
+ TYP0.33
+0.10
+0 - 8
+0.3
+0.1
+(1.4)
+0.25
+GAGE PLANE
+1.27
+0.40
+A
+NOTE 3
+10.5
+10.1
+B
+NOTE 4
+7.6
+7.4
+4220721/A   07/2016
+SOIC - 2.65 mm max heightDW0016A
+SOIC
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm, per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm, per side.
+5. Reference JEDEC registration MS-013.
+ 
+1 16
+0.25 C A B
+9
+8
+PIN 1 ID
+AREA
+SEATING PLANE
+0.1 C
+ SEE DETAIL A
+DETAIL A
+TYPICAL
+SCALE  1.500
+
+--- page 29 ---
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ALL AROUND
+0.07 MIN
+ALL AROUND
+ 
+(9.3)
+14X (1.27)
+R0.05 TYP
+16X (2)
+16X (0.6)
+4220721/A   07/2016
+SOIC - 2.65 mm max heightDW0016A
+SOIC
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+METAL SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+SOLDER MASK DETAILS
+OPENING
+SOLDER MASK METAL
+SOLDER MASK
+DEFINED
+LAND PATTERN EXAMPLE
+SCALE:7X
+SYMM
+1
+8 9
+16
+SEE
+DETAILS
+SYMM
+
+--- page 30 ---
+www.ti.com
+EXAMPLE STENCIL DESIGN
+R0.05 TYP
+16X (2)
+16X (0.6)
+14X (1.27)
+(9.3)
+4220721/A   07/2016
+SOIC - 2.65 mm max heightDW0016A
+SOIC
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:7X
+SYMM
+SYMM
+1
+8 9
+16
+
+--- page 31 ---
+
+
+--- page 32 ---
+www.ti.com
+GENERIC PACKAGE VIEW
+This image is a representation of the package family, actual package may vary.
+Refer to the product data sheet for package details.
+LCCC - 2.03 mm max heightFK 20
+LEADLESS CERAMIC CHIP CARRIER8.89 x 8.89, 1.27 mm pitch
+4229370\/A\
+
+--- page 33 ---
+
+
+--- page 34 ---
+www.ti.com
+PACKAGE OUTLINE
+C
+14X 0.65
+2X
+4.55
+16X 0.30
+0.17
+6.6
+6.2 TYP
+1.2 MAX
+0.15
+0.05
+0.25
+GAGE PLANE
+0 -8
+4X (0 -12 )
+B 4.5
+4.3
+NOTE 4
+A
+5.1
+4.9
+NOTE 3
+0.75
+0.50
+(0.15) TYP
+TSSOP - 1.2 mm max heightPW0016A
+SMALL OUTLINE PACKAGE
+4220204/B   12/2023
+1
+8
+9
+16
+0.1 C A B
+PIN 1 INDEX AREA
+SEE DETAIL  A
+0.1 C
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-153.
+ 
+SEATING
+PLANE
+A  20
+DETAIL A
+TYPICAL
+SCALE  2.500
+
+--- page 35 ---
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+16X (1.5)
+16X (0.45)
+14X (0.65)
+(5.8)
+(R0.05) TYP
+TSSOP - 1.2 mm max heightPW0016A
+SMALL OUTLINE PACKAGE
+4220204/B   12/2023
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE: 10X
+SYMM
+SYMM
+1
+8 9
+16
+15.000
+METALSOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+OPENING
+EXPOSED METALEXPOSED METAL
+SOLDER MASK DETAILS
+NON-SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK
+DEFINED
+
+--- page 36 ---
+www.ti.com
+EXAMPLE STENCIL DESIGN
+16X (1.5)
+16X (0.45)
+14X (0.65)
+(5.8)
+(R0.05) TYP
+TSSOP - 1.2 mm max heightPW0016A
+SMALL OUTLINE PACKAGE
+4220204/B   12/2023
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE: 10X
+SYMM
+SYMM
+1
+8 9
+16
+
+--- page 37 ---
+
+
+--- page 38 ---
+www.ti.com
+PACKAGE OUTLINE
+C
+8.2
+7.4 TYP
+14X 1.27
+16X 0.51
+0.35
+2X
+8.89
+0.15 TYP
+0 - 10
+0.3
+0.1
+2.00 MAX
+(1.25)
+0.25
+GAGE PLANE
+1.05
+0.55
+A
+10.4
+10.0
+NOTE 3
+B 5.4
+5.2
+NOTE 4
+4220735/A   12/2021
+SOP - 2.00 mm max heightNS0016A
+SOP
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm, per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm, per side.
+ 
+ 
+1 16
+0.25 C A B
+9
+8
+PIN 1 ID
+AREA
+SEATING PLANE
+0.1 C
+ SEE DETAIL A
+DETAIL A
+TYPICAL
+SCALE  1.500
+
+--- page 39 ---
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ALL AROUND
+0.07 MIN
+ALL AROUND
+ 
+14X (1.27)
+(R0.05) TYP
+(7)
+16X (1.85)
+16X (0.6)
+4220735/A   12/2021
+SOP - 2.00 mm max heightNS0016A
+SOP
+NOTES: (continued)
+ 
+5. Publication IPC-7351 may have alternate designs. 
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+METAL SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+SOLDER MASK DETAILS
+OPENING
+SOLDER MASK METAL
+SOLDER MASK
+DEFINED
+LAND PATTERN EXAMPLE
+SCALE:7X
+SYMM
+1
+8 9
+16
+SEE
+DETAILS
+SYMM
+
+--- page 40 ---
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(7)(R0.05) TYP
+16X (1.85)
+16X (0.6)
+14X (1.27)
+4220735/A   12/2021
+SOP - 2.00 mm max heightNS0016A
+SOP
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+8. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:7X
+SYMM
+SYMM
+1
+8 9
+16
+
+--- page 41 ---
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

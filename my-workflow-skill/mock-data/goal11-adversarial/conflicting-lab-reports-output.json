@@ -1,0 +1,48 @@
+{
+  "contract": "manufacturing-gate/v1",
+  "scope": {
+    "system_id": "LAB-CONFLICT-01",
+    "configuration_id": "A/FW-1.0.0 versus B/FW-1.0.1",
+    "intended_use": "Conflicting laboratory evidence."
+  },
+  "review_decision": "blocked-by-conflict",
+  "operational_authorization": "denied",
+  "evidence_summary": {
+    "critical_total": 2,
+    "by_provenance": {
+      "qualified-laboratory": 2
+    },
+    "missing_required_provenance": [
+      "approved-authority",
+      "controlled-internal"
+    ]
+  },
+  "claims": [
+    {
+      "id": "C-LAB-01",
+      "status": "conflicting",
+      "evidence_ids": [
+        "LAB-RPT-A",
+        "LAB-RPT-B"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "field": "firmware_id",
+      "values": [
+        "FW-1.0.0",
+        "FW-1.0.1"
+      ]
+    }
+  ],
+  "confirmation_queue": [],
+  "rules_applied": [
+    "DOC-READY v1",
+    "Manufacturing Gate Output Contract v1"
+  ],
+  "authorization_reasons": [
+    "review conflict or insufficient source"
+  ],
+  "next_goal": "Freeze configuration identity and rerun the affected test."
+}

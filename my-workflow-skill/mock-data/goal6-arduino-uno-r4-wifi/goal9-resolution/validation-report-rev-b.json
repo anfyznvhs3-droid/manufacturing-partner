@@ -1,0 +1,8 @@
+{
+  "training_evidence": true,
+  "decision": "ready",
+  "conflicts": [],
+  "non_passing_tests": [],
+  "missing_tests": [],
+  "note": "Synthetic training evidence only. A ready result validates traceability rules, not real product conformity."
+}

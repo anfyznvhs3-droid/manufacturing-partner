@@ -1,0 +1,19 @@
+{
+  "scope": {
+    "system_id": "HANDOVER-AMB-01",
+    "configuration_id": "line-3/unknown-revision",
+    "intended_use": "Ambiguous maintenance handover."
+  },
+  "review_decision": "needs-fact-confirmation",
+  "critical_evidence": [
+    {"id": "HANDOVER-01", "provenance": "controlled-internal"}
+  ],
+  "required_critical_provenance": ["controlled-internal", "approved-authority"],
+  "claims": [
+    {"id": "C-AMB-01", "status": "site-term-unknown", "evidence_ids": ["HANDOVER-01"]},
+    {"id": "C-AMB-02", "status": "missing", "evidence_ids": []}
+  ],
+  "conflicts": [],
+  "confirmation_queue": ["Define usual setting.", "Name owner and measurable restart trigger."],
+  "next_goal": "Resolve tacit terms and the restart criterion from a named source owner."
+}

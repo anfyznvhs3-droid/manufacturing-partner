@@ -1,0 +1,4 @@
+interface:
+  display_name: "제조 문서 검토"
+  short_description: "최대 20개 출처의 제조 근거를 안전하게 통합합니다."
+  default_prompt: "$manufacturing-document-review를 사용해 엔지니어 출처 자료를 감사 가능한 제조 게이트로 통합하세요."

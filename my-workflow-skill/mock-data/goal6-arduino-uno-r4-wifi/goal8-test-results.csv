@@ -1,0 +1,8 @@
+test_id,result,system_id,bom_revision,firmware_id,enclosure_id,sensor_interface_id,cable_set_id,criterion_id,evidence_id,observation
+T01,pass,TRAIN-GW-01,A,FW-GW-0.8.0,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-DOC-01,SYN-T01,All listed artifacts carry synthetic identifiers and revision A.
+T02,pass,TRAIN-GW-01,A,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-EMI-01,SYN-T02,Deliberate firmware mismatch for traceability test; not a real EMC result.
+T03,pass,TRAIN-GW-01,A,FW-GW-0.8.1,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-EME-01,SYN-T03,Deliberate firmware mismatch for traceability test; not a real emissions result.
+T04,pass,TRAIN-GW-01,A,FW-GW-0.8.0,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-THERM-01,SYN-T04,Synthetic planned result only; no chamber test occurred.
+T05,fail,TRAIN-GW-01,A,FW-GW-0.8.0,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-SEC-01,SYN-T05,Synthetic security check reports an unapproved default credential.
+T06,pass,TRAIN-GW-01,A,FW-GW-0.8.0,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-FAULT-01,SYN-T06,Synthetic fault scenario marks telemetry invalid and records an event.
+T07,fail,TRAIN-GW-01,A,FW-GW-0.8.0,ENC-TRAIN-01,SENS-IF-TRAIN-A,CBL-TRAIN-01,CRIT-MARKET-01,SYN-T07,Synthetic market review is incomplete; no market-entry decision exists.

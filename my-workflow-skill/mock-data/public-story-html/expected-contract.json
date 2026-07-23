@@ -1,0 +1,24 @@
+{
+  "required_ids": [
+    "hero",
+    "problem",
+    "operating-model",
+    "flow",
+    "accuracy",
+    "demo",
+    "output",
+    "trust",
+    "cta"
+  ],
+  "required_text": [
+    "20명",
+    "1명의 운영자",
+    "96.7%",
+    "AI 블라인드 합의",
+    "manufacturing-gate/v1",
+    "실제 사실 정확도"
+  ],
+  "required_demo_states": ["vendor", "handover", "conflict"],
+  "required_attributes": ["aria-live", "aria-pressed"],
+  "forbidden_text": ["authorized", "투자심사"]
+}

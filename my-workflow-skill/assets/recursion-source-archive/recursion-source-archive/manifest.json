@@ -1,0 +1,58 @@
+﻿[
+    {
+        "source_url":  "https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_prompt.pdf",
+        "saved_as":  "cdc-prompt.pdf",
+        "status":  "downloaded",
+        "sha256":  "0E48DEEE28CABA82EE5B4191D4C5C6EC4D62E5D27890FA7F0D2C8868F8B758F3",
+        "captured_utc":  "2026-07-23T05:56:18.9863536Z",
+        "note":  ""
+    },
+    {
+        "source_url":  "https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf",
+        "saved_as":  "cdc-proof.pdf",
+        "status":  "downloaded",
+        "sha256":  "B4797F5053D9067329B3DCFCBF913F8BB40D13467453B1300F6D78D08460FC13",
+        "captured_utc":  "2026-07-23T05:56:19.0842234Z",
+        "note":  ""
+    },
+    {
+        "source_url":  "https://chatgpt.com/share/6a55aa50-b484-83ea-85c0-c7e7b4bda41c",
+        "saved_as":  "chat-initial-proof.html",
+        "status":  "downloaded",
+        "sha256":  "07DF5DD9AA107C177339B559E640E18108B7AFFED9FA841DBD318D2157487887",
+        "captured_utc":  "2026-07-23T05:56:20.7243168Z",
+        "note":  ""
+    },
+    {
+        "source_url":  "https://chatgpt.com/share/6a55ad10-7644-83ea-859e-5483d2e0dff0",
+        "saved_as":  "chat-refinement.html",
+        "status":  "downloaded",
+        "sha256":  "36622FE04CF15F739B47CB5034FD090D630DF4D350C4AE2F22985E789B8307C4",
+        "captured_utc":  "2026-07-23T05:56:22.3798306Z",
+        "note":  ""
+    },
+    {
+        "source_url":  "https://medium.com/@kerger.p/an-ai-assisted-breakthrough-in-convex-optimization-an-optimization-problem-dating-back-30-years-a-db5c631119de",
+        "saved_as":  "medium-article.md",
+        "status":  "downloaded-via-fallback",
+        "sha256":  "DC10752031CC9D8D5FDE7BDD19455E6DC05AD4EEBB067EE6758EC32D6ADC577F",
+        "captured_utc":  "2026-07-23T05:56:23.2693777Z",
+        "note":  "Original response: 원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.; fallback: https://r.jina.ai/http://medium.com/@kerger.p/an-ai-assisted-breakthrough-in-convex-optimization-an-optimization-problem-dating-back-30-years-a-db5c631119de"
+    },
+    {
+        "source_url":  "https://github.com/PhillipKerger/zero-order-bounds-lean-verification/archive/refs/heads/master.zip",
+        "saved_as":  "zero-order-bounds-lean-verification-master.zip",
+        "status":  "downloaded",
+        "sha256":  "9443055AB45488A4776B77B3C1B6DC4A4964696E56FC5D6E9C307D8C15148FA7",
+        "captured_utc":  "2026-07-23T05:56:23.7510163Z",
+        "note":  ""
+    },
+    {
+        "source_url":  "https://github.com/PhillipKerger/zero-order-bounds-lean-verification",
+        "saved_as":  "zero-order-bounds-lean-verification.git/",
+        "status":  "mirrored",
+        "sha256":  "0b878a12346b3086058ee18bd83330e86c11821a",
+        "captured_utc":  "2026-07-23T05:56:23.8036031Z",
+        "note":  "Git commit SHA"
+    }
+]

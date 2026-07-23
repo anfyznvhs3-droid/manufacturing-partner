@@ -1,0 +1,3 @@
+my-workflow-skill/**/__pycache__/
+*.pyc
+.codex-log/

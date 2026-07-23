@@ -1,0 +1,10 @@
+{
+  "product": "Arduino UNO R4 WiFi",
+  "product_page": "https://docs.arduino.cc/hardware/uno-r4-wifi",
+  "datasheet": "https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf",
+  "datasheet_file": "../../assets/public-sources/ABX00087-datasheet.pdf",
+  "datasheet_sha256": "0BC5E5182CCA4BD9CE4223E7B76198767D7DEB07094FB09C5830E3849214F653",
+  "datasheet_revision_observed": "Modified 17/07/2026",
+  "captured_utc": "2026-07-23T06:04:21Z",
+  "scope_note": "Public vendor documentation only. This manifest is an evidence snapshot, not a certificate or product approval."
+}

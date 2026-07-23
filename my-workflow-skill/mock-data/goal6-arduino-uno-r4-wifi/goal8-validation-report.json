@@ -1,0 +1,32 @@
+{
+  "training_evidence": true,
+  "decision": "blocked-by-conflict",
+  "conflicts": [
+    {
+      "source": "T02",
+      "field": "firmware_id",
+      "expected": "FW-GW-0.8.0",
+      "observed": "FW-GW-0.8.1"
+    },
+    {
+      "source": "T03",
+      "field": "firmware_id",
+      "expected": "FW-GW-0.8.0",
+      "observed": "FW-GW-0.8.1"
+    }
+  ],
+  "non_passing_tests": [
+    {
+      "test_id": "T05",
+      "result": "fail",
+      "observation": "Synthetic security check reports an unapproved default credential."
+    },
+    {
+      "test_id": "T07",
+      "result": "fail",
+      "observation": "Synthetic market review is incomplete; no market-entry decision exists."
+    }
+  ],
+  "missing_tests": [],
+  "note": "Synthetic training evidence only. A ready result would validate traceability rules, not real product conformity."
+}

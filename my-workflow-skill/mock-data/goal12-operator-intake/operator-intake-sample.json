@@ -1,0 +1,64 @@
+{
+  "contract": "operator-intake/v1",
+  "intake_batch_id": "INT-2026-SEMICON-001",
+  "operator": {"operator_id": "OP-01"},
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "source_owner_id": "ENG-DESIGN-01",
+      "artifact_type": "document",
+      "received_at": "2026-07-23T09:10:00+09:00",
+      "authored_or_revision": "SCH-REV-B",
+      "scope": "training-controller/rev-b",
+      "configuration_id": "CFG-REV-B",
+      "evidence_level": "controlled-internal",
+      "original_record_locator": "controlled://design/SCH-REV-B"
+    },
+    {
+      "source_id": "SRC-02",
+      "source_owner_id": "ENG-TEST-01",
+      "artifact_type": "test-record",
+      "received_at": "2026-07-23T09:20:00+09:00",
+      "authored_or_revision": "TR-017-REV-B",
+      "scope": "training-controller/rev-b",
+      "configuration_id": "CFG-REV-B",
+      "evidence_level": "controlled-internal",
+      "original_record_locator": "controlled://test/TR-017-REV-B"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_owner_id": "ENG-SERVICE-01",
+      "artifact_type": "verbal-handover",
+      "received_at": "2026-07-23T09:30:00+09:00",
+      "authored_or_revision": "2026-07-23 verbal record",
+      "scope": "training-controller/rev-b",
+      "configuration_id": "stated unknown",
+      "evidence_level": "controlled-internal",
+      "original_record_locator": "handover://2026-07-23/ENG-SERVICE-01"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLM-001",
+      "statement": "The controlled schematic identifies configuration CFG-REV-B.",
+      "source_ids": ["SRC-01"]
+    },
+    {
+      "claim_id": "CLM-002",
+      "statement": "The test record is stated to apply to configuration CFG-REV-B.",
+      "source_ids": ["SRC-02"]
+    },
+    {
+      "claim_id": "CLM-003",
+      "statement": "Service handover says the restart was normal.",
+      "source_ids": ["SRC-03"]
+    }
+  ],
+  "confirmation_queue": [
+    {
+      "queue_id": "CQ-001",
+      "source_id": "SRC-03",
+      "request": "Define the restart criterion, actual configuration, and supporting record; do not treat the verbal statement as a passing result."
+    }
+  ]
+}

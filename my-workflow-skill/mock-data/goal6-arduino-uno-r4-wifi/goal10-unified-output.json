@@ -1,0 +1,61 @@
+{
+  "contract": "manufacturing-gate/v1",
+  "scope": {
+    "system_id": "TRAIN-GW-01",
+    "configuration_id": "B/FW-GW-0.8.1",
+    "intended_use": "Synthetic training only; non-safety telemetry gateway."
+  },
+  "review_decision": "ready",
+  "operational_authorization": "denied",
+  "evidence_summary": {
+    "critical_total": 8,
+    "by_provenance": {
+      "synthetic-training": 8
+    },
+    "missing_required_provenance": [
+      "approved-authority",
+      "controlled-internal",
+      "independent-security-assessment",
+      "qualified-laboratory",
+      "regulatory-authority"
+    ]
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "status": "stated",
+      "evidence_ids": [
+        "CC-002",
+        "SYNB-T01"
+      ]
+    },
+    {
+      "id": "C02",
+      "status": "stated",
+      "evidence_ids": [
+        "SYNB-T02",
+        "SYNB-T03",
+        "SYNB-T04"
+      ]
+    },
+    {
+      "id": "C03",
+      "status": "stated",
+      "evidence_ids": [
+        "SYNB-T05",
+        "SYNB-T06",
+        "SYNB-T07"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "confirmation_queue": [],
+  "rules_applied": [
+    "DOC-READY v1",
+    "Manufacturing Gate Output Contract v1"
+  ],
+  "authorization_reasons": [
+    "critical synthetic training evidence is present"
+  ],
+  "next_goal": "Replace the synthetic records with scoped real evidence before requesting authorization."
+}

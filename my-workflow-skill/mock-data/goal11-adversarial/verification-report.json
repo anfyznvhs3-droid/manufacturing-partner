@@ -1,0 +1,27 @@
+{
+  "cases": [
+    {
+      "input": "vendor-declaration-only.json",
+      "keys_ok": true,
+      "review_ok": true,
+      "authorization_ok": true
+    },
+    {
+      "input": "ambiguous-handover.json",
+      "keys_ok": true,
+      "review_ok": true,
+      "authorization_ok": true
+    },
+    {
+      "input": "conflicting-lab-reports.json",
+      "keys_ok": true,
+      "review_ok": true,
+      "authorization_ok": true
+    }
+  ],
+  "case_count": 3,
+  "schema_conformance_percent": 100.0,
+  "constructed_review_verdict_match_percent": 100.0,
+  "constructed_authorization_verdict_match_percent": 100.0,
+  "note": "These are constructed-case guardrail metrics, not factual accuracy on a real labeled manufacturing corpus."
+}

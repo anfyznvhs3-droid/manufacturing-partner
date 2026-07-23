@@ -1,0 +1,26 @@
+{
+  "training_evidence": true,
+  "change_id": "CC-002",
+  "status": "approved-training",
+  "owner": "Training Product Owner",
+  "date": "2026-07-23",
+  "reason": "Resolve the mismatch between configuration revision A and the T02/T03 firmware identifier. The prior results remain retained as invalid evidence.",
+  "prior_configuration": {
+    "system_id": "TRAIN-GW-01",
+    "bom_revision": "A",
+    "firmware_id": "FW-GW-0.8.0",
+    "enclosure_id": "ENC-TRAIN-01",
+    "sensor_interface_id": "SENS-IF-TRAIN-A",
+    "cable_set_id": "CBL-TRAIN-01"
+  },
+  "new_configuration": {
+    "system_id": "TRAIN-GW-01",
+    "bom_revision": "B",
+    "firmware_id": "FW-GW-0.8.1",
+    "enclosure_id": "ENC-TRAIN-01",
+    "sensor_interface_id": "SENS-IF-TRAIN-A",
+    "cable_set_id": "CBL-TRAIN-01"
+  },
+  "invalidated_evidence": ["SYN-T02", "SYN-T03"],
+  "warning": "Synthetic training change control only; not an engineering approval or release authorization."
+}

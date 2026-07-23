@@ -1,0 +1,33 @@
+{
+  "evaluation_id": "GOAL13-AI-BLIND-CONSENSUS-001",
+  "evaluation_scope": "임시 AI 블라인드 합의. 사람 확정 정답셋을 대체하지 않음.",
+  "agent_count": 3,
+  "label_count": 30,
+  "votes_received": 90,
+  "agents": [
+    {"agent_id":"goal13_pdf_auditor_1","ratified":30,"corrected":0,"rejected":0,"not_reviewable":0},
+    {"agent_id":"goal13_pdf_auditor_2","ratified":29,"corrected":1,"rejected":0,"not_reviewable":0},
+    {"agent_id":"goal13_pdf_auditor_3","ratified":29,"corrected":1,"rejected":0,"not_reviewable":0}
+  ],
+  "consensus_rules": {
+    "label_verdict": "2명 이상 같은 verdict를 합의 verdict로 채택한다.",
+    "value_match": "3개 독립 판정이 모두 true일 때 값 일치로 기록한다.",
+    "page_match": "2명 이상 true일 때 페이지 일치로 기록한다.",
+    "full_source_match": "합의 verdict가 ratified이고 값·페이지 일치가 모두 true인 라벨만 완전 일치로 센다."
+  },
+  "summary": {
+    "verdict_consensus_percent": 100.0,
+    "value_match_percent": 100.0,
+    "page_match_majority_percent": 96.7,
+    "full_source_match_percent": 96.7,
+    "full_source_match_count": 29,
+    "exception_count": 1,
+    "exception_label_ids": ["HC-10"],
+    "exception": "HC-10의 기능 주장은 맞지만 후보의 p.1 인용만으로 QH-prime 예외를 증명할 수 없다. PDF p.12 기능 표까지 인용해야 한다."
+  },
+  "provisional_accuracy_percent": 96.7,
+  "provisional_accuracy_definition": "독립 에이전트 3개 중 다수 합의와 페이지·값 근거가 모두 맞은 후보 비율; 실제 사실 정답률이 아님.",
+  "operational_authorization": "denied",
+  "human_ratification_status": "pending",
+  "next_action": "HC-10 페이지 인용을 수정하고, 시간이 확보되면 사람 1명이 30개 라벨을 ratified/corrected/rejected로 확정한다."
+}

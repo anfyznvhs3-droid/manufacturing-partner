@@ -1,0 +1,5 @@
+[
+  {"input": "vendor-declaration-only.json", "output": "vendor-declaration-only-output.json", "review_decision": "needs-fact-confirmation", "operational_authorization": "pending-authority"},
+  {"input": "ambiguous-handover.json", "output": "ambiguous-handover-output.json", "review_decision": "needs-fact-confirmation", "operational_authorization": "pending-authority"},
+  {"input": "conflicting-lab-reports.json", "output": "conflicting-lab-reports-output.json", "review_decision": "blocked-by-conflict", "operational_authorization": "denied"}
+]
