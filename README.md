@@ -18,13 +18,13 @@
 
 제작·운영팀은 2명이며, 실제 스킬 사용자는 1명입니다. 최대 20명의 엔지니어가 자료를 제공하고, 원본 소유자에게만 사실 확인을 요청합니다. `ready`는 문서 상태일 뿐 운전·출하·공정변경 권한을 의미하지 않습니다.
 
-## 재귀 개선
+## 반복 학습과 점진 개선
 
 각 회차는 `등록 → 사실 분해 → 출처 대조 → 사람 확정 → 지표 계산 → Learning update`로 반복됩니다. 사람 확정 정확도가 99.0% 이상이고 필수 증거 누락·충돌·권한 위반이 없으면 루프를 멈추고 `owner_notification`을 통합 출력에 기록합니다. 99% 미만이면 다음 회차의 질문과 규칙을 생성합니다.
 
 ## 파일 안내
 
-- [`my-workflow-skill/SKILL.md`](my-workflow-skill/SKILL.md): 스킬 사용 규칙과 재귀 알고리즘
+- [`my-workflow-skill/SKILL.md`](my-workflow-skill/SKILL.md): 스킬 사용 규칙과 반복 학습 방법
 - [`assets/public-explainer/index.html`](my-workflow-skill/assets/public-explainer/index.html): 대중용 제조 스토리
 - [`assets/workflow-algorithm/index.html`](my-workflow-skill/assets/workflow-algorithm/index.html): INPUT → ALGORITHM → OUTPUT 흐름
 - [`references/review-rubric.md`](my-workflow-skill/references/review-rubric.md): 사실·맥락·출처 검수 기준

@@ -71,9 +71,9 @@ python scripts/validate_multisource_intake.py `
 
 이 저장소의 `assets/public-sources/`와 `mock-data/`는 공개·합성 예시이며 실제 회사·고객 데이터를 대표하지 않는다.
 
-## 재귀 개선과 99% 중단 규칙
+## 반복 학습과 99% 중단 규칙
 
-이 스킬에는 지금까지의 재귀 개선이 반영되어 있다. 한 번의 답변으로 끝내지 않고, 매 회차의 오류·누락·충돌을 다음 회차의 질문과 규칙으로 되돌린다.
+이 스킬은 한 번의 답변으로 끝내지 않는다. 매 회차의 오류·누락·충돌을 다음 회차의 질문과 규칙에 반영해 조금씩 더 정확하게 만든다.
 
 1. 입력을 출처별로 등록하고 원자 사실로 분해한다.
 2. AI 결과를 독립적인 관점으로 재검토한다.
@@ -82,7 +82,7 @@ python scripts/validate_multisource_intake.py `
 5. 오류 유형을 `Learning update`에 추가하고 다음 회차의 질문·루브릭·예시에 반영한다.
 6. 동일한 검증을 다시 실행해 개선 폭을 기록한다.
 
-정확도는 AI의 자기평가가 아니라 사람이 확정한 라벨을 기준으로 계산한다. 사람 확정 사실의 정량 정확도가 **99.0% 이상**이고, 필수 증거 누락·충돌·권한 위반이 0건이면 재귀 루프를 멈춘다. 멈출 때는 최종 출력에 다음을 포함해 담당자에게 알림 상태를 남긴다.
+정확도는 AI의 자기평가가 아니라 사람이 확정한 라벨을 기준으로 계산한다. 사람 확정 사실의 정량 정확도가 **99.0% 이상**이고, 필수 증거 누락·충돌·권한 위반이 0건이면 반복을 멈춘다. 멈출 때는 최종 출력에 다음을 포함해 담당자에게 알림 상태를 남긴다.
 
 ```json
 {
@@ -237,7 +237,7 @@ python scripts/score_atomic_fact_extraction.py --help
 자세한 기준은 다음 자료를 필요할 때만 읽는다.
 
 - [검토 루브릭](references/review-rubric.md)
-- [재귀 연구 절차](references/recursive-research-protocol.md)
+- [반복 연구 절차](references/recursive-research-protocol.md)
 - [단일 운영자·다중 출처 계약](references/single-operator-multisource-intake.md)
 - [통합 출력 계약](references/unified-output-contract.md)
 - [국제표준 기준선](references/international-standards-baseline.md)
@@ -256,7 +256,7 @@ python scripts/score_atomic_fact_extraction.py --help
 
 ## 근거 3 — 문서 준비 상태를 결정하는 방법
 
-[재귀 연구 절차](references/recursive-research-protocol.md)는 `DOC-READY v1`의 네 상태와 확인 큐를 정의한다. 점수는 우선순위에 쓰지만 필수 증거가 없는 문서를 `ready`로 바꾸지 않는다.
+[반복 연구 절차](references/recursive-research-protocol.md)는 `DOC-READY v1`의 네 상태와 확인 큐를 정의한다. 점수는 우선순위에 쓰지만 필수 증거가 없는 문서를 `ready`로 바꾸지 않는다.
 
 ## 근거 4 — 문서 판정과 운영 권한을 분리하는 방법
 
