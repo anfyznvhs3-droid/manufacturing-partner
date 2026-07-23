@@ -53,7 +53,8 @@
     .decision-map > p { margin:0 0 18px; color:var(--muted); }
     .flow-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px; }
     .flow-node { min-width:145px; padding:13px 14px; text-align:center; border:2px solid var(--navy); border-radius:14px; background:#fff; font-weight:800; }
-    .flow-node.question { border-color:var(--orange); }
+    .flow-node.start, .flow-node.done { border-radius:999px; }
+    .flow-node.question { min-width:150px; min-height:92px; display:grid; place-items:center; border:0; border-radius:0; background:#ffe4b8; clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%); }
     .flow-node.stop { border-color:var(--red); }
     .flow-node.done { border-color:var(--mint); }
     .flow-arrow { color:var(--navy); font-weight:900; }
@@ -90,7 +91,7 @@
       <h2 id="decision-heading">예 / 아니오로 따라가는 알고리즘</h2>
       <p>아니오가 나오면 억지로 통과하지 않고, 자료를 보충하거나 다시 확인합니다.</p>
       <div class="flow-row">
-        <div class="flow-node">자료가 있나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
+        <div class="flow-node start">시작<br>자료 받기</div><div class="flow-arrow">→</div><div class="flow-node question">자료가 있나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
         <div class="flow-node question">내용이 서로 같나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
         <div class="flow-node question">사람이 확인했나요?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
         <div class="flow-node question">정확도 99% 이상?</div><div class="flow-branch"><span class="yes">예</span><span class="flow-arrow">↓</span></div>
