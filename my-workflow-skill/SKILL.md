@@ -39,6 +39,38 @@ AI가 그럴듯하게 말하더라도 근거가 없으면 사실로 확정하지
 - 품질 이슈, 정비 기록, 생산 기록
 - 서로 내용이 다른 문서 묶음
 
+## 처음 사용하는 동료를 위한 입력 계약
+
+입력은 `operator-intake/v1` JSON 한 개로 시작한다. 아래 항목이 없으면 처리하지 말고 `insufficient-source`로 돌린다.
+
+| 항목 | 반드시 넣을 내용 |
+| --- | --- |
+| `intake_batch_id` | 이번 검토 배치의 고유 ID |
+| `operator.operator_id` | 스킬을 실행한 한 명의 운영자 ID(실명 대신 사내 별칭) |
+| `sources[]` | 1~20개 출처의 ID, 소유자 ID, 유형, 수신 시각, 개정, 범위, 구성 ID, 증거 수준, 원본 위치 |
+| `claims[]` | 원문에서 분해한 주장과 연결된 `source_ids` |
+| `confirmation_queue[]` | 확인할 질문, 대상 `source_id`, 확인 담당자 |
+
+최소 입력 예시는 [operator-intake-sample.json](mock-data/goal12-operator-intake/operator-intake-sample.json)이다. 먼저 아래 명령으로 입력 계약을 검사한다.
+
+```powershell
+python scripts/validate_multisource_intake.py `
+  --input mock-data/goal12-operator-intake/operator-intake-sample.json `
+  --report mock-data/goal12-operator-intake/operator-intake-validation-report.json
+```
+
+## 개인정보·고객정보·기밀정보 보호
+
+해커톤과 공개 저장소에는 실제 회사 자료를 넣지 않는다. 입력 전 운영자는 다음을 수행한다.
+
+1. 이름·이메일·전화번호·사번·계정·토큰·주소를 운영자/소유자 별칭으로 치환한다.
+2. 고객명·제품 일련번호·주문번호·내부 URL·접근 키·회사 기밀 수치와 도면을 삭제하거나 합성값으로 바꾼다.
+3. 원본은 회사 승인 저장소에만 두고, `original_record_locator`에는 `controlled://` 같은 비밀을 노출하지 않는 위치만 적는다.
+4. 공개 예시에는 `synthetic-training`, `public-vendor` 수준의 자료만 사용한다.
+5. 실수로 기밀이 들어오면 즉시 처리를 중단하고 해당 원본 소유자와 보안 담당자에게 알린다.
+
+이 저장소의 `assets/public-sources/`와 `mock-data/`는 공개·합성 예시이며 실제 회사·고객 데이터를 대표하지 않는다.
+
 ## 재귀 개선과 99% 중단 규칙
 
 이 스킬에는 지금까지의 재귀 개선이 반영되어 있다. 한 번의 답변으로 끝내지 않고, 매 회차의 오류·누락·충돌을 다음 회차의 질문과 규칙으로 되돌린다.
@@ -148,6 +180,20 @@ python scripts/validate_multisource_intake.py --input <intake.json> --report <re
 
 마지막 결과는 반드시 `manufacturing-gate/v1` 형식으로 만든다. 이 형식은 모든 입력을 같은 모양으로 보여주기 위한 계약이다.
 
+최종 JSON에는 최소한 `contract`, `review_decision`, `operational_authorization`, `claims`, `confirmation_queue`, `metrics`, `learning_update`, `recursive_status`, `owner_notification`을 포함한다. `review_decision`은 `ready`, `needs-fact-confirmation`, `blocked-by-conflict`, `insufficient-source` 중 하나이고, `operational_authorization`은 `denied`, `pending-authority`, `authorized` 중 하나다.
+
+## 사람이 반드시 확인할 부분
+
+AI가 제안한 결과를 그대로 제출하지 않는다. 담당자는 다음을 직접 확인하고 이름/ID와 시각을 기록한다.
+
+- 각 `claim`이 실제 원본의 해당 페이지·표·시험 기록과 일치하는가
+- `inferred`, `missing`, `conflicting` 상태가 누락되지 않았는가
+- 구성 ID·개정·시험 조건이 같은 제품 범위를 가리키는가
+- 벤더 선언이나 구두 인수인계를 시험 결과·안전 적합성으로 확대하지 않았는가
+- 충돌이 있으면 `blocked-by-conflict`로 멈췄는가
+- `authorized`가 필요한 경우 실제 권한자와 승인 증거가 존재하는가
+- 99% 중단 조건의 정확도 산정에 사람 확정 라벨만 사용했는가
+
 ## 자주 쓰는 도구 [근거 1·2·4]
 
 - `scripts/validate_multisource_intake.py`: 한 운영자와 출처 1~20개를 검사한다.
@@ -155,6 +201,38 @@ python scripts/validate_multisource_intake.py --input <intake.json> --report <re
 - `scripts/verify_unified_outputs.py`: 충돌·모호성·벤더 자료 사례를 다시 검사한다.
 - `scripts/score_atomic_fact_extraction.py`: 사람이 확정한 라벨만으로 사실 precision/recall을 계산한다.
 - `scripts/extract_pdf_text_metrics.py`: 긴 PDF를 한 번 추출하고 핵심 사실만 다음 검토에 전달한다.
+
+## mock-data 재실행 순서
+
+처음 보는 동료는 실제 자료 대신 아래 합성 자료로 전체 흐름을 재현할 수 있다.
+
+```powershell
+# 1) 입력 계약
+python scripts/validate_multisource_intake.py `
+  --input mock-data/goal12-operator-intake/operator-intake-sample.json `
+  --report mock-data/goal12-operator-intake/operator-intake-validation-report.json
+
+# 2) 상충·모호·벤더 선언 가드레일
+python scripts/verify_unified_outputs.py `
+  --directory mock-data/goal11-adversarial `
+  --expectations mock-data/goal11-adversarial/expectations.json `
+  --report mock-data/goal11-adversarial/verification-report.json
+
+# 3) 공개 스토리 HTML 계약
+python scripts/validate_public_story_html.py `
+  --input assets/public-explainer/index.html `
+  --contract mock-data/public-story-html/expected-contract.json `
+  --report mock-data/public-story-html/validation-report.json
+
+# 4) 사람 라벨 기반 사실 추출 지표
+python scripts/score_atomic_fact_extraction.py --help
+```
+
+각 명령의 `valid`, `keys_ok`, `review_ok`, `authorization_ok`를 확인한다. 마지막 명령은 실제 라벨 파일을 연결해야 하므로, 사람 확정 라벨 없이 정확도를 주장하지 않는다.
+
+## 파일 구조 점검
+
+배포 전 `references/`, `scripts/`, `assets/`, `mock-data/` 각각에 실제 파일이 하나 이상 있는지 확인한다. 이 네 폴더가 비어 있으면 스킬을 배포하지 않는다.
 
 자세한 기준은 다음 자료를 필요할 때만 읽는다.
 
